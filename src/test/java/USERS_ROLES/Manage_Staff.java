@@ -783,8 +783,12 @@ driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/mat-dialog-container/a
 Thread.sleep(3000);
 
 driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-add-edit-manage-staff/section/div/div[2]/div/div/div/form/div[2]/div/button[1]/span[1]")).click();
-Thread.sleep(13000);
+Thread.sleep(10000);
 
+Thread.sleep(1000);
+Thread.sleep(1000);
+
+Thread.sleep(1000);
 
 	}
 }
