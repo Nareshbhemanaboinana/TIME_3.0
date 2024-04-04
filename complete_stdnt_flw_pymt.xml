@@ -17,7 +17,7 @@
                  <methods>
                     <include name="Student_payment_complete_flow_credit_card"/>
                 </methods>
-        </class>   
+        </class>   <!-- 
 	 	        <class name="All_Flows.Student_Fresh_subpayment_complete_flow_dd_cheque">
 
                  <methods>
@@ -54,7 +54,7 @@
                  <methods>
                     <include name="Student_payment_complete_flow_TDS"/>
                 </methods>
-        </class>
+        </class> -->
        </classes>
 
 			
