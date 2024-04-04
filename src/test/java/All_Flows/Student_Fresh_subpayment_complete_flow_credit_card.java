@@ -51,7 +51,7 @@ public class Student_Fresh_subpayment_complete_flow_credit_card extends Login  {
         String referenceNumber = fk.regexify("[A-Z0-9]{12}"); // Example: Generate a 12-character alphanumeric string
 
   String Name = fk.name().firstName();
-			  WebElement svenextt = driver.findElement(By.xpath("//*[@id=\"leftsidebar\"]/div/ul/li[3]/ul/li[3]/a"));
+			  WebElement svenextt = driver.findElement(By.xpath("//*[@id=\"leftsidebar\"]/div/ul/li[3]/ul/li[1]/a"));
 				JavascriptExecutor zz = (JavascriptExecutor) driver;
 				zz.executeScript("arguments[0].scrollIntoView()", svenextt);
 				Thread.sleep(5000);
