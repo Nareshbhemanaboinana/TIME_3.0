@@ -1,0 +1,70 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Naresh">
+<listeners>
+        <listener class-name="Components.Listeners"/>
+</listeners>
+<test name="login">
+
+ <classes>
+  <class name="All_Flows.Student_Fresh_subpayment_complete_flow_Cash">
+                <methods>
+                    <include name="Student_payment_complete_flow_Cash"/>
+                </methods>
+        </class>     
+
+  <class name="All_Flows.Student_Fresh_subpayment_complete_flow_credit_card">
+
+                 <methods>
+                    <include name="Student_payment_complete_flow_credit_card"/>
+                </methods>
+        </class>   
+	 	        <class name="All_Flows.Student_Fresh_subpayment_complete_flow_dd_cheque">
+
+                 <methods>
+                    <include name="Student_payment_complete_flow_DD_Cheque"/>
+                </methods>
+ </class>   
+		         <class name="All_Flows.Student_Fresh_subpayment_complete_flow_DRCT_TNFR_BNK">
+
+                 <methods>
+                    <include name="Student_payment_complete_flow_DRCT_TNFR_BNK"/>
+                </methods>
+       
+ </class>   
+    <class name="All_Flows.Student_Fresh_subpayment_complete_flow_NEFT">
+
+                 <methods>
+                    <include name="Student_payment_complete_flow_NEFT"/>
+                </methods>
+        </class>
+		        <class name="All_Flows.Student_Fresh_subpayment_complete_flow_Others">
+
+                 <methods>
+                    <include name="Student_payment_complete_flow_Others"/>
+                </methods>
+        </class>
+                <class name="All_Flows.Student_Fresh_subpayment_complete_flow_RTGS">
+
+                 <methods>
+                    <include name="Student_payment_complete_flow_RTGS"/>
+                </methods>
+        </class>
+	 <class name="All_Flows.Student_Fresh_subpayment_complete_flow_TDS">
+
+                 <methods>
+                    <include name="Student_payment_complete_flow_TDS"/>
+                </methods>
+        </class>
+       </classes>
+
+			
+
+		
+
+          
+
+
+</test>
+</suite>
+
+

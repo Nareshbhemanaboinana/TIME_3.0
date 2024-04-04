@@ -1,0 +1,146 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Naresh">
+<listeners>
+        <listener class-name="Components.Listeners"/>
+</listeners>
+<test name="login">
+
+ <classes>
+     
+ 
+  <class name="devAdmin.Organization_Type">
+                <methods>
+                   <include name="ADD_Organization_Type"/>
+                </methods>
+        </class>     
+
+  <class name="devAdmin.Bank_Setups">
+
+                 <methods>
+                    <include name="ADD_Bank"/>
+                </methods>
+        </class>   <!--
+		        <class name="devAdmin.Student_Status">
+
+                 <methods>
+                    <include name="ADDStudent_Status"/>
+                </methods>
+ </class>    
+		         <class name="devAdmin.Refund_Reason">
+
+                 <methods>
+                    <include name="ADD_Refund_Reason"/>
+                </methods>
+       
+ </class>   
+    <class name="devAdmin.Follow_up_Status">
+
+                 <methods>
+                    <include name="ADD_Follow_up_Status"/>
+                </methods>
+        </class>
+		        <class name="devAdmin.Academic_Level_Setups">
+
+                 <methods>
+                    <include name="ADD_Academic_Level"/>
+                </methods>
+        </class>
+                <class name="devAdmin.Category">
+
+                 <methods>
+                    <include name="ADD_Category"/>
+                </methods>
+        </class>
+	 <class name="devAdmin.Course_type">
+
+                 <methods>
+                    <include name="ADD_Course_type"/>
+                </methods>
+        </class>
+	  <class name="devAdmin.Email_Templates">
+
+                 <methods>
+                    <include name="ADDEmail_Templates"/>
+                </methods>
+        </class>    
+        <class name="devAdmin.Cancellation_Reason">
+
+                 <methods>
+                    <include name="ADD_Cancellation_Reason"/>
+                </methods>
+        </class>
+	 <class name="devAdmin.Account">
+
+                 <methods>
+                    <include name="ADD_Account"/>
+                </methods>
+        </class>
+    <class name="devAdmin.State">
+
+                 <methods>
+                    <include name="ADD_State"/>
+                </methods>
+        </class>
+   <class name="devAdmin.NewTimecity">
+
+                 <methods>
+                    <include name="ADD_Timecity"/>
+                </methods>
+        </class>
+  <class name="devAdmin.City">
+
+                 <methods>
+                    <include name="ADD_City"/>
+                </methods>
+        </class>
+ <class name="devAdmin.Franchisee">
+
+                 <methods>
+                    <include name="ADD_Franchisee"/>
+                </methods>
+        </class>
+  <class name="devAdmin.Office">
+
+                 <methods>
+                    <include name="ADD_Office"/>
+                </methods>
+        </class>
+   <class name="devAdmin.Single_course">
+
+                 <methods>
+                    <include name="ADD_Single_course"/>
+                </methods>
+        </class>
+    <class name="devAdmin.Single_Sub_Course_setups">
+
+                 <methods>
+                    <include name="ADD_Single_Sub_Course"/>
+                </methods>
+        </class>
+
+   <class name="devAdmin.Combo_Course_setup">
+
+                 <methods>
+                    <include name="ADD_Combo_Course"/>
+                </methods>
+        </class>
+<class name="devAdmin.Combo_SubCourse">
+
+                 <methods>
+                    <include name="ADD_Combo_SubCourse"/>
+                </methods>
+        </class>
+-->
+ </classes>
+
+			
+
+		
+
+          
+
+
+</test>
+</suite>
+
+

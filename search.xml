@@ -1,0 +1,138 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Naresh">
+<listeners>
+        <listener class-name="Components.Listeners"/>
+</listeners>
+<test name="login">
+
+ <classes>
+  <class name="devAdmin.Organization_Type">
+                <methods>
+                    <include name="Search_Organization_Type"/>
+                </methods>
+        </class>     
+
+  <class name="devAdmin.Bank_Setups">
+
+                 <methods>
+                    <include name="Search_Bank"/>
+                </methods>
+        </class>   
+	 	        <class name="devAdmin.Student_Status">
+
+                 <methods>
+                    <include name="Search_Student_Status"/>
+                </methods>
+ </class>   
+		         <class name="devAdmin.Refund_Reason">
+
+                 <methods>
+                    <include name="Search_Refund_Reason"/>
+                </methods>
+       
+ </class>   
+    <class name="devAdmin.Follow_up_Status">
+
+                 <methods>
+                    <include name="Search_Follow_up_Status"/>
+                </methods>
+        </class>
+		        <class name="devAdmin.Academic_Level_Setups">
+
+                 <methods>
+                    <include name="Search_Academic_Level"/>
+                </methods>
+        </class>
+                <class name="devAdmin.Category">
+
+                 <methods>
+                    <include name="Search_Category"/>
+                </methods>
+        </class>
+	 <class name="devAdmin.Course_type">
+
+                 <methods>
+                    <include name="Search_Course_type"/>
+                </methods>
+        </class>
+        <class name="devAdmin.Cancellation_Reason">
+
+                 <methods>
+                    <include name="Search_Cancellation_Reason"/>
+                </methods>
+        </class>
+	 <class name="devAdmin.Account">
+
+                 <methods>
+                    <include name="Search_Account"/>
+                </methods>
+        </class>
+    <class name="devAdmin.State">
+
+                 <methods>
+                    <include name="Search_State"/>
+                </methods>
+        </class>
+   <class name="devAdmin.NewTimecity">
+
+                 <methods>
+                    <include name="Search_Timecity"/>
+                </methods>
+        </class>
+  <class name="devAdmin.City">
+
+                 <methods>
+                    <include name="Search_City"/>
+                </methods>
+        </class>
+ <class name="devAdmin.Franchisee">
+
+                 <methods>
+                    <include name="Search_Franchisee"/>
+                </methods>
+        </class>
+  <class name="devAdmin.Office">
+
+                 <methods>
+                    <include name="Search_Office"/>
+                </methods>
+        </class>
+   <class name="devAdmin.Single_course">
+
+                 <methods>
+                    <include name="Search_Single_course"/>
+                </methods>
+        </class>
+    <class name="devAdmin.Single_Sub_Course_setups">
+
+                 <methods>
+                    <include name="Search_Singlesub_course"/>
+                </methods>
+        </class>
+
+   <class name="devAdmin.Combo_Course_setup">
+
+                 <methods>
+                    <include name="Search_Combo_Course"/>
+                </methods>
+        </class>
+<class name="devAdmin.Combo_SubCourse">
+
+                 <methods>
+                    <include name="Search_Combo_SubCourse"/>
+                </methods>
+        </class>
+
+ </classes>
+
+			
+
+		
+
+          
+
+
+</test>
+</suite>
+
+
