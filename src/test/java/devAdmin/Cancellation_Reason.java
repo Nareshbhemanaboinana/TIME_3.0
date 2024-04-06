@@ -13,7 +13,7 @@ import com.github.javafaker.Faker;
 
 import Components.Universal_methods;
 
-public class Cancellation_Reason extends Login{
+public class Cancellation_Reason extends Login1{
 
 	@Test(priority=0)
 	public void ADD_Cancellation_Reason() throws InterruptedException {

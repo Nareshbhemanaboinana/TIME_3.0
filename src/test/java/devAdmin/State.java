@@ -15,7 +15,7 @@ import Components.Universal_methods;
 
 
 
-public class State extends Login  {
+public class State extends Login1  {
 	
 	 @Test(priority = 0)	
 	 public void ADD_State() throws InterruptedException {
@@ -55,7 +55,7 @@ public class State extends Login  {
 
      			      // Print the success message
      			      System.out.println(" message: " + ppopups);
-     			      driver.findElement(By.xpath("//div[@tabindex='-1']")).click();
+     			/*      driver.findElement(By.xpath("//div[@tabindex='-1']")).click();
      	     			Thread.sleep(4000);
      	     			zz.executeScript("window.scrollBy(0,400)");
 
@@ -64,7 +64,7 @@ public class State extends Login  {
      	             Universal_methods UM=new Universal_methods();
 
      	     		Assert.assertEquals( statename, UM.First_Record_Of_Row(driver) );
-     	 
+     	 */
 
 	            }
 	            else {

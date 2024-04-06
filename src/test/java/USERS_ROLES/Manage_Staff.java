@@ -15,8 +15,9 @@ import com.github.javafaker.Faker;
 
 import Components.Universal_methods;
 import devAdmin.Login;
+import devAdmin.Login1;
 
-public class Manage_Staff extends Login{
+public class Manage_Staff extends Login1{
 	
 	@Test
 	public void Adding_Manage_Staff() throws InterruptedException, FindFailed {

@@ -12,7 +12,7 @@ import com.github.javafaker.Faker;
 
 import Components.Universal_methods;
 
-public class Combo_Course_setup extends Login{
+public class Combo_Course_setup extends Login1{
 
 	@Test (priority =0)
 	public void ADD_Combo_Course() throws InterruptedException {

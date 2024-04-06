@@ -13,7 +13,7 @@ import com.github.javafaker.Faker;
 
 import Components.Universal_methods;
 
-public class Category extends Login{
+public class Category extends Login1{
 
 	@Test(priority=0)
 	public void ADD_Category() throws InterruptedException {

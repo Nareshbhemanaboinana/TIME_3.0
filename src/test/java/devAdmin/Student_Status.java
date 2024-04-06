@@ -17,7 +17,7 @@ import com.github.javafaker.Faker;
 
 import Components.Universal_methods;
 
-public class Student_Status extends Login {
+public class Student_Status extends Login1 {
 	
 	@Test (priority =0)
 	public void ADDStudent_Status() throws InterruptedException {

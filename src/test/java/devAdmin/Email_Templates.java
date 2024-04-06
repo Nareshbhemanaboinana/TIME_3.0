@@ -13,7 +13,7 @@ import com.github.javafaker.Faker;
 
 import Components.Universal_methods;
 
-public class Email_Templates extends Login {
+public class Email_Templates extends Login1 {
 
 	@Test(priority=1)
 	public void ADDEmail_Templates() throws InterruptedException {
