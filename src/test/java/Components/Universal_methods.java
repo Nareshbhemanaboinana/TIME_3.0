@@ -98,23 +98,32 @@ public class Universal_methods    {
 
 	   }
 	   
-	 private static void redirectConsoleToFile(String filePath) {
-	        try {
-	            File logFile = new File(filePath);
-	            if (!logFile.exists()) {
-	                logFile.createNewFile();
-	            }
-	            FileOutputStream fos = new FileOutputStream(logFile);
-	            PrintStream ps = new PrintStream(fos);
-	            System.setOut(ps);
-	            System.setErr(ps);
-	        } catch (Exception e) {
-	            e.printStackTrace();
-	        }
 	    
 	
+	public String selectOptionByText(WebDriver rdriver, String optionText) throws InterruptedException {
+		Thread.sleep(3000);
+		 driver=rdriver;
+			PageFactory.initElements(rdriver, this);
 	
+		
+		// Find all the options in the dropdown
+        List<WebElement> options = driver.findElements(By.cssSelector("mat-option"));
+        
+        // Loop through the options to find the desired one
+        for (WebElement option : options) {
+            if (option.getText().equals(optionText)) {
+                // Click on the desired option
+                option.click();
+                Thread.sleep(3000);
+                break; // Exit the loop once the desired option is found and clicked
+            }
+        
+           
+
+ 	   }
+		return optionText;
+    }
 
 
-}
+
 }
