@@ -15,7 +15,7 @@ import com.github.javafaker.Faker;
 import Components.Listeners;
 import Components.Universal_methods;
 
-public class Organization_Type extends Login  {
+public class Organization_Type extends Login1  {
 
 	 @Test(priority = 0)
 	 

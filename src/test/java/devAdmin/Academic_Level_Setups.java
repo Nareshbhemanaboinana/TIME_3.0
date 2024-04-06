@@ -12,7 +12,7 @@ import com.github.javafaker.Faker;
 
 import Components.Universal_methods;
 
-public class Academic_Level_Setups extends Login{
+public class Academic_Level_Setups extends Login1{
 
 	@Test(priority=0)
 	public void ADD_Academic_Level() throws InterruptedException {

@@ -23,17 +23,19 @@ public class Batch extends Login {
 	@Test
 	public void ADD_Batch() throws InterruptedException {
 		Faker fk = new Faker();
-		   String Name = fk.name().firstName();
-		    
-			  WebElement svenext = driver.findElement(By.xpath("//*[@id=\"leftsidebar\"]/div/ul/li[8]/ul/li[1]/a"));
+		 //  String Name = fk.name().firstName();
+        int randNo = fk.number().numberBetween(1, 100);
+
+			  WebElement svenext = driver.findElement(By.xpath("//a[@href='#/masters/batch\']"));
 				JavascriptExecutor zz = (JavascriptExecutor) driver;
 				zz.executeScript("arguments[0].scrollIntoView()", svenext);
 				Thread.sleep(5000);
 				zz.executeScript("arguments[0].click()", svenext);
 				Thread.sleep(6000);
-			      driver.findElement(By.xpath("//input[@formcontrolname='sName']")).sendKeys(Name+"_Batch");
-			      driver.findElement(By.xpath("//input[@formcontrolname='sCode']")).sendKeys(Name);
-
+			
+				
+				
+			
 			  	
 			  	List<WebElement> dropdowns = driver.findElements(By.cssSelector("mat-select"));
 			  	WebElement FirstDropdown = dropdowns.get(0);
@@ -43,80 +45,93 @@ public class Batch extends Login {
 			  	WebElement fiveDropdown = dropdowns.get(4);
 			  	WebElement sixDropdown = dropdowns.get(5);
 
-			  	FirstDropdown.click();
-			  	Thread.sleep(3000);
-			  	List<WebElement> options=driver.findElements(By.cssSelector("mat-option"));
+				
+			  	ThirdDropdown.click();
+				Thread.sleep(3000);
+				List<WebElement> options=driver.findElements(By.cssSelector("mat-option"));
 
-			
-			  	for(int i=1; i<=options.size()-1;i++) {
-			  		options.get(i).click();
-			  		break;
-			  	}
+				for(int j=4; j<=options.size()-1;j++) {
+			        int randomNumber = fk.number().numberBetween(1, options.size()-1);
+
+					options.get(randomNumber).click();
+					fourDropdown.click();
+					Thread.sleep(3000);
+			  		List<WebElement> secooptions=driver.findElements(By.cssSelector("mat-option"));
+
+					     if(secooptions.size()==1)  {
+					 		Thread.sleep(3000);
+					    	//driver.navigate().refresh();
+					  	WebElement secoendtime=driver.findElement(By.cssSelector("mat-option"));
+					 		Thread.sleep(3000);
+					 		secoendtime.click();
+					 		Thread.sleep(3000);
+
+						  	ThirdDropdown.click();
+
+					 				}
+					     
+					      else {
+
+					    	  for(int k=1; k<=secooptions.size()-1;k++) {
+						    		 secooptions.get(k).click();
+						    			Thread.sleep(3000);
+
+						    		break;
+
+
+			     }
+					    		break;
+
+							
+						}
+
+				}	
+				
+ 
+				
+				String Batch_Name=ThirdDropdown.getText();
 			  	
-			  	String Franchise=FirstDropdown.getText();
-	System.out.println("Franchisee:"+Franchise);
+				String Batch_code=fourDropdown.getText();
+	
+	
+			  	
+			      driver.findElement(By.xpath("//input[@formcontrolname='sName']")).sendKeys(Batch_Name+"_Batch_"+randNo);
+			      driver.findElement(By.xpath("//input[@formcontrolname='sCode']")).sendKeys(Batch_Name+"_"+randNo);
+			  	zz.executeScript("window.scrollBy(0,500)");
 
-	secoendDropdown.click();
-	  	Thread.sleep(3000);
-	  	List<WebElement> options0=driver.findElements(By.cssSelector("mat-option"));
+			      	  	
+			  	System.out.println("Batch Name :"+Batch_Name+"_Batch_"+randNo);
+			  	System.out.println("Batch Code :"+Batch_Name+"_"+randNo);
 
-		for(int i=1; i<=options0.size()-1;i++) {
-			options0.get(i).click();
-	  		break;
-	  	}  	
-	  	String Office =secoendDropdown.getText();
-	  	System.out.println("Office:"+Office);
-
-		ThirdDropdown.click();
-		Thread.sleep(3000);
-
-		List<WebElement> options00=driver.findElements(By.cssSelector("mat-option"));
-
-		for(int i=1; i<=options00.size()-1;i++) {
-			options00.get(i).click();
-	  		break;
-	  	}  
-		fourDropdown.click();
-		Thread.sleep(3000);
-		List<WebElement> options000=driver.findElements(By.cssSelector("mat-option"));
-
-		for(int i=1; i<=options000.size()-1;i++) {
-			options000.get(i).click();
-	  		break;
-	  	} 
-		String course=ThirdDropdown.getText();
-	  	String subcourse =fourDropdown.getText();
-	System.out.println("course:"+course);
-	System.out.println("subcourse:"+subcourse);
-	zz.executeScript("window.scrollBy(0,400)");
-	Thread.sleep(5000);
+				
+		
+				
+	
 	// Get today's date
-	DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-	Date today = new  Date(0);
-	String todayDate = dateFormat.format(today);
-	//System.out.println("Today's date: " + todayDate);
+			    LocalDate today = LocalDate.now();
 
-	// Add 30 days to today's date
-	Calendar calendar = Calendar.getInstance();
-	calendar.setTime(today);
-	calendar.add(Calendar.DATE, 30);
-	Date after30Days = (Date) calendar.getTime();
-	String after30DaysDate = dateFormat.format(after30Days);
-	//System.out.println("Date after 30 days: " + after30DaysDate);
+		        // Format for printing dates
+		        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 
-	driver.findElement(By.xpath("//input[@formcontrolname='sBatchStartDate']")).sendKeys(todayDate);
+		        // Print today's date
+		      //  System.out.println("Today's Date: " + today.format(formatter));
+
+		        // Calculate date after 30 days
+		        LocalDate dateAfter30Days = today.plusDays(30);
+
+		        // Print date after 30 days
+		      //  System.out.println("Date after 30 days: " + dateAfter30Days.format(formatter));
+
+	driver.findElement(By.xpath("//input[@formcontrolname='sBatchStartDate']")).sendKeys(today.format(formatter));
 
 			
 		
 		Thread.sleep(4000);
-		driver.findElement(By.xpath("//input[@formcontrolname='sBatchFinishDate']")).sendKeys(after30DaysDate);
+		driver.findElement(By.xpath("//input[@formcontrolname='sBatchFinishDate']")).sendKeys(dateAfter30Days.format(formatter));
 	   
 	    
 
-			
-	//driver.findElement(By.xpath("//input[@formcontrolname='sBatchFinishDate']")).sendKeys(formattedFutureDate);
-	//driver.findElement(By.xpath("//input[@formcontrolname='sBatchStartDate']")).sendKeys(formattedToday);
-
+	
 	fiveDropdown.click();
 		List<WebElement> options090=driver.findElements(By.cssSelector("mat-option"));
 
@@ -152,15 +167,48 @@ public class Batch extends Login {
 		zz.executeScript("window.scrollBy(0,500)");
 		Thread.sleep(3000);
 
-	driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-batch/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/form/div[3]/div/mat-tab-group/div/mat-tab-body/div/div/table/tbody/tr[1]/td[3]/mat-form-field/div/div[1]/div[3]/input")).sendKeys(todayDate);
+	driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-batch/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/form/div[3]/div/mat-tab-group/div/mat-tab-body/div/div/table/tbody/tr[1]/td[3]/mat-form-field/div/div[1]/div[3]/input")).sendKeys(today.format(formatter));
 
 			
 		
 		Thread.sleep(4000);
-		driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-batch/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/form/div[3]/div/mat-tab-group/div/mat-tab-body/div/div/table/tbody/tr[2]/td[3]/mat-form-field/div/div[1]/div[3]/input")).sendKeys(after30DaysDate);
+		driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-batch/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/form/div[3]/div/mat-tab-group/div/mat-tab-body/div/div/table/tbody/tr[2]/td[3]/mat-form-field/div/div[1]/div[3]/input")).sendKeys(dateAfter30Days.format(formatter));
 		Thread.sleep(3000);
 
 		driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-batch/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/form/div[4]/div/button[1]/span[1]")).click();
 		Thread.sleep(3000);
+	
+		WebElement popup =driver.findElement(By.xpath("//span[@class='mat-simple-snack-bar-content']"));
+	      String popups = popup.getText();
+
+		     // String backgroundColor = popup.getCssValue("background-color");
+	            if (popups.equalsIgnoreCase("Batch Successfully Created !")) {
+	            	WebElement ppopup =driver.findElement(By.xpath("//span[@class='mat-simple-snack-bar-content']"));
+	  	          
+	        		
+   			   String ppopups = ppopup.getText();
+   			     // System.out.println("Background color: " + backgroundColor);
+
+   			      // Print the success message
+   			      System.out.println(" message: " + ppopups);
+   			
+
+	            }
+	            else {
+
+	         		WebElement ppopup =driver.findElement(By.xpath("//span[@class='mat-simple-snack-bar-content']"));
+	          
+	        		
+	        			   String ppopups = ppopup.getText();
+	        			     // System.out.println("Background color: " + backgroundColor);
+
+	        			      // Print the success message
+	        			      System.out.println(" message: " + ppopups);
+	        		          throw new RuntimeException("Test failed because the popup message did not contain 'Successfully'.");
+   
+	        	 
+
+	            }
+	
 	}
 }

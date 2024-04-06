@@ -17,7 +17,7 @@ import com.github.javafaker.Faker;
 
 import Components.Universal_methods;
 
-public class Single_course extends Login {
+public class Single_course extends Login1 {
 	
 
 	@Test (priority =0)

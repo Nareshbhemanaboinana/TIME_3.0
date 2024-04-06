@@ -13,7 +13,7 @@ import com.github.javafaker.Faker;
 
 import Components.Universal_methods;
 
-public class Follow_up_Status extends Login{
+public class Follow_up_Status extends Login1{
 
 	@Test(priority=0)
 	public void ADD_Follow_up_Status() throws InterruptedException {

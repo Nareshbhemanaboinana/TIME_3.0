@@ -20,7 +20,7 @@ import com.github.javafaker.Faker;
 
 import Components.Universal_methods;
 
-public class Single_Sub_Course_setups extends Login{
+public class Single_Sub_Course_setups extends Login1{
 	
 
 	@Test (priority =0)

@@ -6,20 +6,54 @@
   </listeners>
   <test thread-count="5" name="login(failed)">
     <classes>
-      <class name="devAdmin.Bank_Setups">
+      <class name="All_Flows.Student_Fresh_subpayment_complete_flow_credit_card">
         <methods>
-          <include name="ADD_Bank"/>
           <include name="TEEMSLOGIN"/>
-          <include name="teardown"/>
+          <include name="Student_payment_complete_flow_credit_card"/>
         </methods>
-      </class> <!-- devAdmin.Bank_Setups -->
-      <class name="devAdmin.Organization_Type">
+      </class> <!-- All_Flows.Student_Fresh_subpayment_complete_flow_credit_card -->
+      <class name="All_Flows.Student_Fresh_subpayment_complete_flow_Others">
         <methods>
-          <include name="ADD_Organization_Type"/>
+          <include name="Student_payment_complete_flow_Others"/>
           <include name="TEEMSLOGIN"/>
-          <include name="teardown"/>
         </methods>
-      </class> <!-- devAdmin.Organization_Type -->
+      </class> <!-- All_Flows.Student_Fresh_subpayment_complete_flow_Others -->
+      <class name="All_Flows.Student_Fresh_subpayment_complete_flow_NEFT">
+        <methods>
+          <include name="Student_payment_complete_flow_NEFT"/>
+          <include name="TEEMSLOGIN"/>
+        </methods>
+      </class> <!-- All_Flows.Student_Fresh_subpayment_complete_flow_NEFT -->
+      <class name="All_Flows.Student_Fresh_subpayment_complete_flow_DRCT_TNFR_BNK">
+        <methods>
+          <include name="TEEMSLOGIN"/>
+          <include name="Student_payment_complete_flow_DRCT_TNFR_BNK"/>
+        </methods>
+      </class> <!-- All_Flows.Student_Fresh_subpayment_complete_flow_DRCT_TNFR_BNK -->
+      <class name="All_Flows.Student_Fresh_subpayment_complete_flow_dd_cheque">
+        <methods>
+          <include name="Student_payment_complete_flow_DD_Cheque"/>
+          <include name="TEEMSLOGIN"/>
+        </methods>
+      </class> <!-- All_Flows.Student_Fresh_subpayment_complete_flow_dd_cheque -->
+      <class name="All_Flows.Student_Fresh_subpayment_complete_flow_RTGS">
+        <methods>
+          <include name="Student_payment_complete_flow_RTGS"/>
+          <include name="TEEMSLOGIN"/>
+        </methods>
+      </class> <!-- All_Flows.Student_Fresh_subpayment_complete_flow_RTGS -->
+      <class name="All_Flows.Student_Fresh_subpayment_complete_flow_TDS">
+        <methods>
+          <include name="Student_payment_complete_flow_TDS"/>
+          <include name="TEEMSLOGIN"/>
+        </methods>
+      </class> <!-- All_Flows.Student_Fresh_subpayment_complete_flow_TDS -->
+      <class name="All_Flows.Student_Fresh_subpayment_complete_flow_Cash">
+        <methods>
+          <include name="Student_payment_complete_flow_Cash"/>
+          <include name="TEEMSLOGIN"/>
+        </methods>
+      </class> <!-- All_Flows.Student_Fresh_subpayment_complete_flow_Cash -->
     </classes>
   </test> <!-- login(failed) -->
 </suite> <!-- Failed suite [Naresh] -->

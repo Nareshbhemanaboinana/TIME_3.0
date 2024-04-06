@@ -14,7 +14,7 @@ import com.github.javafaker.Faker;
 
 import Components.Universal_methods;
 
-public class City extends Login{
+public class City extends Login1{
 
 	@Test(priority=0)
 	public void ADD_City() throws InterruptedException {

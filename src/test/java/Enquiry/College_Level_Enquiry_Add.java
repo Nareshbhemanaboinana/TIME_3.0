@@ -22,7 +22,7 @@ public class College_Level_Enquiry_Add extends Login{
 	public void College_Level_Enquiry_Adding() throws InterruptedException {
 				Faker fk = new Faker();
 		    String Name = fk.name().firstName();
-			  WebElement svenextt = driver.findElement(By.xpath("//*[@id=\"leftsidebar\"]/div/ul/li[3]/ul/li[3]/a"));
+			  WebElement svenextt = driver.findElement(By.xpath("//a[@href='#/admin/collegelevel']"));
 				JavascriptExecutor zz = (JavascriptExecutor) driver;
 				zz.executeScript("arguments[0].scrollIntoView()", svenextt);
 				Thread.sleep(5000);

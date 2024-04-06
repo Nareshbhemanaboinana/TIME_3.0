@@ -24,7 +24,7 @@ import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
 
-public class ApplicationAcceptence extends Login {
+public class ApplicationAcceptence extends Login1 {
 	
 	@Test
   public void Form() throws InterruptedException, IOException {

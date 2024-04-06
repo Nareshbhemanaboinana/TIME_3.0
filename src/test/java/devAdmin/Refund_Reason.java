@@ -11,7 +11,7 @@ import com.github.javafaker.Faker;
 
 import Components.Universal_methods;
 
-public class Refund_Reason extends Login{
+public class Refund_Reason extends Login1{
 
 	@Test(priority=0)
 	public void ADD_Refund_Reason() throws InterruptedException {

@@ -11,7 +11,7 @@ import com.github.javafaker.Faker;
 
 import Components.Universal_methods;
 
-public class Bank_Setups extends Login {
+public class Bank_Setups extends Login1 {
 	
 
 	 @Test(priority = 0)

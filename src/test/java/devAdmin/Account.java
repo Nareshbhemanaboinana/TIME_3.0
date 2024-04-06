@@ -13,7 +13,7 @@ import com.github.javafaker.Faker;
 
 import Components.Universal_methods;
 
-public class Account extends Login{
+public class Account extends Login1{
 
 	@Test(priority=0)
 	public void ADD_Account() throws InterruptedException {

@@ -13,7 +13,7 @@ import com.github.javafaker.Faker;
 
 import Components.Universal_methods;
 
-public class NewTimecity extends Login{
+public class NewTimecity extends Login1{
 	
 
 	@Test (priority =0)

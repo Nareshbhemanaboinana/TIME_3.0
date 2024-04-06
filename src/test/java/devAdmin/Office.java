@@ -15,7 +15,7 @@ import com.github.javafaker.Faker;
 
 import Components.Universal_methods;
 
-public class Office extends Login {
+public class Office extends Login1 {
 
 	@Test(priority=0)
 

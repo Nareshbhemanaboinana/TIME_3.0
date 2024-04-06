@@ -18,7 +18,7 @@ import com.github.javafaker.Faker;
 
 import Components.Universal_methods;
 
-public class Franchisee extends Login {
+public class Franchisee extends Login1 {
 
 	@Test(priority=0)
 	public void ADD_Franchisee() throws InterruptedException {
