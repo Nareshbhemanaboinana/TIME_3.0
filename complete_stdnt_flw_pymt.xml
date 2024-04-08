@@ -6,6 +6,25 @@
 <test name="login">
 
  <classes>
+
+ <class name="All_Flows.Batch_Change_Request">
+                <methods>
+                    <include name="Validating_Batch_Change_Request"/>
+                </methods>
+        </class>   
+<class name="All_Flows.Upgradation">
+                <methods>
+                    <include name="Upgradation_with_Cash"/>
+                </methods>
+        </class>   
+<class name="All_Flows.Re_Enrollment">
+                <methods>
+                    <include name="Re_Enrollment_with_Cash"/>
+                </methods>
+        </class>   
+
+
+
   <class name="All_Flows.Student_Fresh_subpayment_complete_flow_Cash">
                 <methods>
                     <include name="Student_payment_complete_flow_Cash"/>

@@ -232,7 +232,7 @@ zz.executeScript("window.scrollBy(0,500)");
 
  
       driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-collegelevel/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/mat-vertical-stepper/div[5]/div/div/div/div/button[2]/span[1]")).click();
-      Thread.sleep(4000);
+      Thread.sleep(5000);
 
       Alert alert = driver.switchTo().alert();
 

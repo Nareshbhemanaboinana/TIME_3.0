@@ -78,8 +78,11 @@ public class ExtendreportsNG {
         ExtentSparkReporter reporter = new ExtentSparkReporter(reportFilePath);
         reporter.config().setReportName("TEEMS 3.0 Automation Results");
         reporter.config().setDocumentTitle("Automation Test Results");
-        reporter.config().setTheme(Theme.STANDARD);
+     //  reporter.config().setTheme(Theme.STANDARD);
 
+       reporter.config().setTheme(Theme.DARK);
+
+        
         ExtentReports extent = new ExtentReports();
         extent.attachReporter(reporter);
         extent.setSystemInfo("Tester", "Naresh");

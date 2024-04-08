@@ -6,54 +6,11 @@
   </listeners>
   <test thread-count="5" name="login(failed)">
     <classes>
-      <class name="All_Flows.Student_Fresh_subpayment_complete_flow_credit_card">
+      <class name="All_Flows.Batch_Change_Request">
         <methods>
-          <include name="TEEMSLOGIN"/>
-          <include name="Student_payment_complete_flow_credit_card"/>
+          <include name="Validating_Batch_Change_Request"/>
         </methods>
-      </class> <!-- All_Flows.Student_Fresh_subpayment_complete_flow_credit_card -->
-      <class name="All_Flows.Student_Fresh_subpayment_complete_flow_Others">
-        <methods>
-          <include name="Student_payment_complete_flow_Others"/>
-          <include name="TEEMSLOGIN"/>
-        </methods>
-      </class> <!-- All_Flows.Student_Fresh_subpayment_complete_flow_Others -->
-      <class name="All_Flows.Student_Fresh_subpayment_complete_flow_NEFT">
-        <methods>
-          <include name="Student_payment_complete_flow_NEFT"/>
-          <include name="TEEMSLOGIN"/>
-        </methods>
-      </class> <!-- All_Flows.Student_Fresh_subpayment_complete_flow_NEFT -->
-      <class name="All_Flows.Student_Fresh_subpayment_complete_flow_DRCT_TNFR_BNK">
-        <methods>
-          <include name="TEEMSLOGIN"/>
-          <include name="Student_payment_complete_flow_DRCT_TNFR_BNK"/>
-        </methods>
-      </class> <!-- All_Flows.Student_Fresh_subpayment_complete_flow_DRCT_TNFR_BNK -->
-      <class name="All_Flows.Student_Fresh_subpayment_complete_flow_dd_cheque">
-        <methods>
-          <include name="Student_payment_complete_flow_DD_Cheque"/>
-          <include name="TEEMSLOGIN"/>
-        </methods>
-      </class> <!-- All_Flows.Student_Fresh_subpayment_complete_flow_dd_cheque -->
-      <class name="All_Flows.Student_Fresh_subpayment_complete_flow_RTGS">
-        <methods>
-          <include name="Student_payment_complete_flow_RTGS"/>
-          <include name="TEEMSLOGIN"/>
-        </methods>
-      </class> <!-- All_Flows.Student_Fresh_subpayment_complete_flow_RTGS -->
-      <class name="All_Flows.Student_Fresh_subpayment_complete_flow_TDS">
-        <methods>
-          <include name="Student_payment_complete_flow_TDS"/>
-          <include name="TEEMSLOGIN"/>
-        </methods>
-      </class> <!-- All_Flows.Student_Fresh_subpayment_complete_flow_TDS -->
-      <class name="All_Flows.Student_Fresh_subpayment_complete_flow_Cash">
-        <methods>
-          <include name="Student_payment_complete_flow_Cash"/>
-          <include name="TEEMSLOGIN"/>
-        </methods>
-      </class> <!-- All_Flows.Student_Fresh_subpayment_complete_flow_Cash -->
+      </class> <!-- All_Flows.Batch_Change_Request -->
     </classes>
   </test> <!-- login(failed) -->
 </suite> <!-- Failed suite [Naresh] -->

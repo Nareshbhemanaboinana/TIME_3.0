@@ -101,7 +101,7 @@ public class Universal_methods    {
 	    
 	
 	public String selectOptionByText(WebDriver rdriver, String optionText) throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		 driver=rdriver;
 			PageFactory.initElements(rdriver, this);
 	
@@ -114,7 +114,7 @@ public class Universal_methods    {
             if (option.getText().equals(optionText)) {
                 // Click on the desired option
                 option.click();
-                Thread.sleep(3000);
+                Thread.sleep(2000);
                 break; // Exit the loop once the desired option is found and clicked
             }
         
