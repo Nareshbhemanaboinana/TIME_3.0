@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
 
+import Components.Universal_methods;
 import devAdmin.Login;
 
 public class School_Level_Enquiry_Add extends Login{
@@ -20,6 +21,7 @@ public class School_Level_Enquiry_Add extends Login{
 	@Test
 	public void school_Level_Enquiry_Adding() throws InterruptedException {
 				Faker fk = new Faker();
+				Universal_methods UM=new Universal_methods();
 		    String Name = fk.name().firstName();
 			  WebElement svenextt = driver.findElement(By.xpath("//a[@href='#/admin/schllevel\']"));
 				JavascriptExecutor zz = (JavascriptExecutor) driver;
@@ -42,71 +44,37 @@ public class School_Level_Enquiry_Add extends Login{
 				WebElement tenDropdown = dropdowns.get(9);
 
 				FirstDropdown.click();
-		        List<WebElement> matOptions = driver.findElements(By.cssSelector("mat-option"));
-		        // Loop through the options to find the desired one
-		        for (WebElement option : matOptions) {
-		            if (option.getText().equals("2024")) {
-		                // Click on the desired option
-		                option.click();
-		                break; // Exit the loop once the desired option is found and clicked
-		            }
-		        }
+		        Thread.sleep(3000);
 
-				Thread.sleep(3000);
+				UM.selectOptionByText(driver, "2024");
+		        Thread.sleep(3000);
+
 			      driver.findElement(By.xpath("//input[@formcontrolname='sName']")).sendKeys(Name);
 			      driver.findElement(By.xpath("//input[@formcontrolname='sMobileNo']")).sendKeys("9999999999");
 			      driver.findElement(By.xpath("//input[@formcontrolname='sTelephoneNo']")).sendKeys("99999999999");
 			      driver.findElement(By.xpath("//input[@formcontrolname='sEmail']")).sendKeys(Name+"@yopmail.com");
 			      driver.findElement(By.xpath("//input[@formcontrolname='iDOB']")).sendKeys("07/06/1994");
 			      secoendDropdown.click();
-			      List<WebElement> matOptionss = driver.findElements(By.cssSelector("mat-option"));
-			        // Loop through the options to find the desired one
-			        for (WebElement option : matOptionss) {
-			            if (option.getText().equals("Male")) {
-			                // Click on the desired option
-			                option.click();
-			                break; // Exit the loop once the desired option is found and clicked
-			            }
-			        }
+			        Thread.sleep(3000);
+			      UM.selectOptionByText(driver, "Male");
 					Thread.sleep(3000);
 					zz.executeScript("window.scrollBy(0,500)");
 					Thread.sleep(3000);
 
 			      thirdDropdown.click();
-			      List<WebElement> mmatOptions = driver.findElements(By.cssSelector("mat-option"));
-			        // Loop through the options to find the desired one
-			        for (WebElement option : mmatOptions) {
-			            if (option.getText().equals("OBC")) {
-			                // Click on the desired option
-			                option.click();
-			                break; // Exit the loop once the desired option is found and clicked
-			            }
-			        }
+			      Thread.sleep(3000);
+			      UM.selectOptionByText(driver, "OBC");
 					Thread.sleep(3000);
 
 			      fourthDropdown.click();
-			      List<WebElement> maatOptions = driver.findElements(By.cssSelector("mat-option"));
-			        // Loop through the options to find the desired one
-			        for (WebElement option : maatOptions) {
-			            if (option.getText().equals("MBA")) {
-			                // Click on the desired option
-			                option.click();
-			                break; // Exit the loop once the desired option is found and clicked
-			            }
-			        }
+			      Thread.sleep(3000);
+			      UM.selectOptionByText(driver, "MBA");
 					Thread.sleep(3000);
-
 			      fiveDropdown.click();
-			      List<WebElement> mattOptions = driver.findElements(By.cssSelector("mat-option"));
-			        // Loop through the options to find the desired one
-			        for (WebElement option : mattOptions) {
-			            if (option.getText().equals("Finance")) {
-			                // Click on the desired option
-			                option.click();
-			                break; // Exit the loop once the desired option is found and clicked
-			            }
-			        }		   
-			        
+			      Thread.sleep(3000);
+			      UM.selectOptionByText(driver, "Finance");
+					Thread.sleep(3000);
+			     	      
 			        driver.findElement(By.xpath("//button[@type='submit'][1]")).click(); 
 				      driver.findElement(By.xpath("//input[@formcontrolname='sFatherName']")).sendKeys("Father");
 				      driver.findElement(By.xpath("//input[@formcontrolname='sFatherMobile']")).sendKeys("9999999999");
@@ -127,30 +95,15 @@ public class School_Level_Enquiry_Add extends Login{
 				      driver.findElement(By.xpath("//textarea[@formcontrolname='sMailingAddress1']")).sendKeys("hyd");
 				      driver.findElement(By.xpath("//textarea[@formcontrolname='sMailingAddress2']")).sendKeys("hyd");
 				      driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-schllevel/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/mat-vertical-stepper/div[3]/div/div/div/form/div[1]/div[1]/div[2]/div[3]/mat-form-field/div/div[1]/div[3]/mat-select/div/div[2]/div")).click();
+				      UM.selectOptionByText(driver, "Telengana");
+						Thread.sleep(3000);
+				     
 
-				      List<WebElement> Options009 = driver.findElements(By.cssSelector("mat-option"));
-				        // Loop through the options to find the desired one
-				        for (WebElement option : Options009) {
-				            if (option.getText().equals("Telengana")) {
-				                // Click on the desired option
-				                option.click();
-				                break; // Exit the loop once the desired option is found and clicked
-				            }
-				        }		   
-					  	Thread.sleep(3000);
+                     driver.findElement(By.cssSelector("mat-select[formcontrolname='iMailingCity']")).click();
+                      Thread.sleep(3000);
 
-				      sixDropdown.click();
-				      List<WebElement> Options = driver.findElements(By.cssSelector("mat-option"));
-				        // Loop through the options to find the desired one
-				        for (WebElement option : Options) {
-				            if (option.getText().equals("Telengana")) {
-				                // Click on the desired option
-				                option.click();
-				                break; // Exit the loop once the desired option is found and clicked
-				            }
-				        }		   
-					  	Thread.sleep(3000);
-
+				      UM.selectOptionByText(driver, "Hyderabad");
+						Thread.sleep(3000);
 					      driver.findElement(By.xpath("//input[@ng-reflect-name='sMailingZipCode']")).sendKeys("500067");
 					      driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-schllevel/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/mat-vertical-stepper/div[3]/div/div/div/form/div[1]/div[2]/div[1]/div/mat-checkbox/label/span[1]")).click(); 
 						  	Thread.sleep(3000);
@@ -159,6 +112,8 @@ public class School_Level_Enquiry_Add extends Login{
 		Thread.sleep(4000);
       			  	
 	driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-schllevel/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/mat-vertical-stepper/div[4]/div/div/div/div[1]/div[2]/div/div/table/tbody/tr[1]/td[1]/mat-form-field/div/div[1]/div[3]/mat-select/div/div[2]")).click();
+	
+	
 	List<WebElement> Optionss = driver.findElements(By.cssSelector("mat-option"));
 					        // Loop through the options to find the desired one
 	                        
@@ -173,16 +128,12 @@ public class School_Level_Enquiry_Add extends Login{
 					
 
 	driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-schllevel/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/mat-vertical-stepper/div[4]/div/div/div/div[1]/div[2]/div/div/table/tbody/tr[1]/td[2]/mat-form-field/div/div[1]/div[3]/mat-select/div/div[2]")).click();
-	List<WebElement> Optionsss = driver.findElements(By.cssSelector("mat-option"));
-	// Loop through the options to find the desired one
-	for (WebElement option : Optionsss) {
-	    if (option.getText().equals("CBSE")) {
-	        // Click on the desired option
-	        option.click();
-	        break; // Exit the loop once the desired option is found and clicked
-	    }
-	}	
-						  	Thread.sleep(3000);
+	
+	Thread.sleep(3000);
+
+    UM.selectOptionByText(driver, "CBSE");
+		Thread.sleep(3000);
+	
 
 	driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-schllevel/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/mat-vertical-stepper/div[4]/div/div/div/div[1]/div[2]/div/div/table/tbody/tr[1]/td[3]/mat-form-field/div/div[1]/div[3]/mat-select/div/div[2]")).click();
 	Thread.sleep(3000); 
@@ -213,28 +164,17 @@ public class School_Level_Enquiry_Add extends Login{
 	  	driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-schllevel/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/mat-vertical-stepper/div[4]/div/div/div/form/div/div[1]/mat-form-field/div/div[1]/div[3]/mat-select/div/div[2]")).click();
 					  	Thread.sleep(3000);
 //	driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-collegelevel/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/mat-vertical-stepper/div[5]/div/div/div/form/div/div[1]/div[1]/mat-form-field/div/div[1]/div[3]/mat-select/div/div[2]")).click();
-	  	List<WebElement> Options3s = driver.findElements(By.cssSelector("mat-option"));
-	  //Loop through the options to find the desired one
-	  for (WebElement option : Options3s) {
-	   if (option.getText().equals("IIT-JEE")) {
-	       // Click on the desired option
-	       option.click();
-	       break; // Exit the loop once the desired option is found and clicked
-	   }
-	  }	
-		Thread.sleep(3000);
+					  	UM.selectOptionByText(driver, "IIT-JEE");
+						Thread.sleep(3000);
+						Thread.sleep(3000);
 
 	driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-schllevel/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/mat-vertical-stepper/div[4]/div/div/div/form/div/div[2]/mat-form-field/div/div[1]/div[3]/mat-select/div/div[2]/div")).click();
-	List<WebElement> Options4s = driver.findElements(By.cssSelector("mat-option"));
-	//Loop through the options to find the desired one
-	for (WebElement option : Options4s) {
-	 if (option.getText().equals("CPT/CLAT")) {
-	     // Click on the desired option
-	     option.click();
-	     break; // Exit the loop once the desired option is found and clicked
-	 }
-	}
 	Thread.sleep(3000);
+
+	UM.selectOptionByText(driver, "CPT/CLAT");
+	Thread.sleep(3000);
+	
+	
 
 	zz.executeScript("window.scrollBy(0,500)");
 	Thread.sleep(3000);
@@ -356,7 +296,7 @@ public class School_Level_Enquiry_Add extends Login{
 //	saveAnEnquiry.click(); // Or perform any other action you need
 
      
-	Thread.sleep(3000);
+	Thread.sleep(4000);
 	   try {
 
 	      Alert alert = driver.switchTo().alert();
@@ -365,7 +305,7 @@ public class School_Level_Enquiry_Add extends Login{
 	      String inputString = alert.getText();
 	      String id = inputString.substring(inputString.indexOf(":") + 2); // Adding 2 to exclude ": " from the result
 
-	     System.out.println(id);
+	     System.out.println("School level Enquiry ID is :"+id);
 
 	     Thread.sleep(3000);
 	     alert.accept();

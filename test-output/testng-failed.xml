@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Masters.Combo_Course_Batch">
+      <class name="All_Flows.Re_Enrollment">
         <methods>
-          <include name="Adding_combo_course_Batch"/>
+          <include name="Re_Enrollment_with_Cash"/>
           <include name="TEEMSLOGIN"/>
         </methods>
-      </class> <!-- Masters.Combo_Course_Batch -->
+      </class> <!-- All_Flows.Re_Enrollment -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
