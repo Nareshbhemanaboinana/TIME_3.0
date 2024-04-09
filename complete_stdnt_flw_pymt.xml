@@ -26,7 +26,7 @@
                     <include name="Student_payment_complete_flow_Cash"/>
                 </methods>
         </class>     
-<!-- 
+
 	 <class name="All_Flows.Batch_Change_Request">
                 <methods>
                     <include name="Validating_Batch_Change_Request"/>
@@ -74,7 +74,7 @@
                  <methods>
                     <include name="Student_payment_complete_flow_TDS"/>
                 </methods>
-        </class> -->
+        </class> 
        </classes>
 
 			
