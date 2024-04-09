@@ -618,6 +618,10 @@ public class Student_Fresh_subpayment_complete_flow_Cash extends Login  {
 				Thread.sleep(3000); 
 				zz.executeScript("window.scrollBy(0,600)");
 				Thread.sleep(3000); 
+				Thread.sleep(3000); 
+				zz.executeScript("window.scrollBy(0,600)");
+				Thread.sleep(3000); 
+
 
 	 			driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-updatefee-preview/section/div/div[2]/div/div/div/div[3]/button[1]/span[1]")).click();
 	
