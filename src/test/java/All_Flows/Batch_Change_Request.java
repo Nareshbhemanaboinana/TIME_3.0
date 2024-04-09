@@ -592,16 +592,16 @@ zz.executeScript("window.scrollBy(0,500)");
 					driver.findElement(By.xpath("//span[text()=' Save ']")).click();
 
 
-					WebElement popupd =driver.findElement(By.xpath("//span[@class='mat-simple-snack-bar-content']"));
-				     String popupsd = popupd.getText();
+					WebElement Request =driver.findElement(By.xpath("//span[@class='mat-simple-snack-bar-content']"));
+				     String Request1 = Request.getText();
 
 					     // String backgroundColor = popup.getCssValue("background-color");
-				           if (popupsd.contains("Data Saved Successfully!!!")) {
+				           if (Request1.equals("Data Saved Successfully!!!")) {
 				           	
-				           	System.out.println("Massage:"+ popupsd);
+				           	System.out.println("Massage:"+ Request1);
 				           }
 				           else {
-					           	System.out.println("Massage:"+ popupsd);
+					           	System.out.println("Massage:"+ Request1);
 						          throw new RuntimeException("Test failed because the popup message did not contain 'Successfully'.");
 
 				           }
@@ -669,18 +669,18 @@ zz.executeScript("window.scrollBy(0,500)");
 
 				driver.findElement(By.xpath("//span[text()=' Approve ']")).click();
 				//Thread.sleep(2000);
-				WebElement popup1 =driver.findElement(By.xpath("//span[@class='mat-simple-snack-bar-content']"));
+				WebElement Approve =driver.findElement(By.xpath("//span[@class='mat-simple-snack-bar-content']"));
 				Thread.sleep(3000);
 
-						String popups1 = popup1.getText();
+						String Approve1 = Approve.getText();
 
 						     // String backgroundColor = popup.getCssValue("background-color");
-					           if (popups1.contains("Approved Sucessfully!!!")) {
+					           if (Approve1.equals("Approved Sucessfully!!!")) {
 					           	
-					           	System.out.println("Massage:"+ popups1);
+					           	System.out.println("Massage:"+ Approve1);
 					           }
 					           else {
-						           	System.out.println("Massage:"+ popups1);
+						           	System.out.println("Massage:"+ Approve1);
 							          throw new RuntimeException("Test failed because the popup message did not contain 'Successfully'.");
 
 					           }

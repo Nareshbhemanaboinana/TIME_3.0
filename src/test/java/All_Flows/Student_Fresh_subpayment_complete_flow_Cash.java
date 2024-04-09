@@ -592,10 +592,8 @@ public class Student_Fresh_subpayment_complete_flow_Cash extends Login  {
 
 				 Screen screen = new Screen();
 
-				 String projectDirectory = System.getProperty("user.dir");
-
-				 // Specify the relative path to the image file within the project directory
-				 String imagePath = projectDirectory + File.separator + "images" + File.separator + "validationNo.png";
+				 String workspacePath = System.getenv("WORKSPACE");
+				 String imagePath = workspacePath + File.separator + "images" + File.separator + "validationNo.png";
 
 				 // Use the constructed image path
 				 Pattern wordPattern = new Pattern(imagePath);

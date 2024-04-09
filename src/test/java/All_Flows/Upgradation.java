@@ -631,17 +631,23 @@ zz.executeScript("window.scrollBy(0,500)");
 
 				   driver.findElement(By.xpath("//span[text()=' Save and Print ']")).click();
 				   
-				   WebElement popup =driver.findElement(By.xpath("//span[@class='mat-simple-snack-bar-content']"));
-				      String popups = popup.getText();
+					WebElement Approve =driver.findElement(By.xpath("//span[@class='mat-simple-snack-bar-content']"));
+					Thread.sleep(3000);
 
-					     // String backgroundColor = popup.getCssValue("background-color");
-				              
-				        		
-			   			     // System.out.println("Background color: " + backgroundColor);
+							String Approve1 = Approve.getText();
 
-			   			      // Print the success message
-			   			      System.out.println(" message: " + popups);
-			   	
+							     // String backgroundColor = popup.getCssValue("background-color");
+						           if (Approve1.equals("Sucessfully!!!")) {
+						           	
+						           	System.out.println("Massage:"+ Approve1);
+						           }
+						           else {
+							           	System.out.println("Massage:"+ Approve1);
+								          throw new RuntimeException("Test failed because the popup message did not contain 'Successfully'.");
+
+						           }
+
+
 	     
 	}
 }
