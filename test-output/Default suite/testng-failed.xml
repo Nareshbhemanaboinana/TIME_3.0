@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="All_Flows.Re_Enrollment">
+      <class name="All_Flows.Student_Fresh_subpayment_complete_flow_Cash">
         <methods>
-          <include name="Re_Enrollment_with_Cash"/>
+          <include name="Student_payment_complete_flow_Cash"/>
           <include name="TEEMSLOGIN"/>
+          <include name="teardown"/>
         </methods>
-      </class> <!-- All_Flows.Re_Enrollment -->
+      </class> <!-- All_Flows.Student_Fresh_subpayment_complete_flow_Cash -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
