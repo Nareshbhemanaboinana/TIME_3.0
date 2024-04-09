@@ -41,19 +41,18 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
 		
 		String optionText2 = "NEFT";
 		
-		
 		Faker fk = new Faker();
 		Universal_methods UM=new Universal_methods ();
 
 	  Actions actions = new Actions(driver);
-	    String chequeNumber = fk.number().digits(8); // Example: Generate an 8-digit number
+	   String chequeNumber = fk.number().digits(8); // Example: Generate an 8-digit number
 	    String ackNumber = fk.number().digits(10); // Example: Generate a 10-digit number
 	    String neftReferenceNumber = fk.regexify("[A-Z0-9]{10}"); // Example: Generate a 10-character alphanumeric string
 	    String rtgsReferenceNumber = fk.regexify("[A-Z0-9]{10}"); // Example: Generate a 10-character alphanumeric string
 	    String referenceNumber = fk.regexify("[A-Z0-9]{12}"); // Example: Generate a 12-character alphanumeric string
 
 	String Name = fk.name().firstName();
-			  WebElement svenextt = driver.findElement(By.xpath("//a[@href='#/admin/collegelevel']"));
+	  WebElement svenextt = driver.findElement(By.xpath("//a[@href='#/admin/collegelevel']"));
 				JavascriptExecutor zz = (JavascriptExecutor) driver;
 				zz.executeScript("arguments[0].scrollIntoView()", svenextt);
 				Thread.sleep(5000);
@@ -269,14 +268,17 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
 		
 	    
 			  WebElement svenexxst = driver.findElement(By.xpath("//a[@href='#/fresh/individualf']"));
-			//	JavascriptExecutor zz = (JavascriptExecutor) driver;
+				//JavascriptExecutor zz = (JavascriptExecutor) driver;
 				zz.executeScript("arguments[0].scrollIntoView()", svenexxst);
 				Thread.sleep(5000);
 				zz.executeScript("arguments[0].click()", svenexxst);
 				Thread.sleep(6000);
 		
 				driver.findElement(By.xpath("//input[@formcontrolname='enquiryID']")).sendKeys(id);
+				Thread.sleep(3000);
 				zz.executeScript("window.scrollBy(0,400)");
+				Thread.sleep(3000);
+		        actions.sendKeys(Keys.TAB).perform();
 				Thread.sleep(3000);
 
 				driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/div/div/mat-vertical-stepper/div[1]/div/div/div/form/div[2]/button/span[1]")).click();
@@ -293,9 +295,9 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
 				Thread.sleep(3000);
 				UM.selectOptionByText(driver, "MBA_Batch");
 				System.out.println("Enrolled Batch is: MBA_Batch");
-				Thread.sleep(3000);
+				Thread.sleep(4000);
 
-				  WebElement typeOfPayment = driver.findElement(By.cssSelector("mat-select[formcontrolname='typeOfPayment']"));
+				  WebElement typeOfPayment = driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body/div/div/div/mat-vertical-stepper/div[2]/div/div/div/form[1]/div/div[6]/div[1]/mat-form-field/div/div[1]/div[3]/mat-select/div/div[2]"));
 			        
 			        // Click on the dropdown
 				   typeOfPayment.click();
@@ -536,10 +538,10 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
 					   Thread.sleep(5000);
 					
 					   driver.navigate().refresh();
-		               
+		          
 
 		 			  WebElement svoenext = driver.findElement(By.xpath("//a[@href='#/payments/individual-student']"));
-		 			//	JavascriptExecutor zz = (JavascriptExecutor) driver;
+		 				//JavascriptExecutor zz = (JavascriptExecutor) driver;
 		 				zz.executeScript("arguments[0].scrollIntoView()", svoenext);
 		 				Thread.sleep(5000);
 		 				zz.executeScript("arguments[0].click()", svoenext);
@@ -593,19 +595,24 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
 				driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-update-fee/section/div/div[2]/div/div/div/mat-vertical-stepper/div[2]/div/div/div/form/div[2]/button[2]/span[1]")).click();
 				Thread.sleep(3000); 
 
-				 Screen screen = new Screen();
+		        WebElement textElement = driver.findElement(By.xpath("//mat-label[contains(text(), 'Validation No ')]"));
 
-				 String projectDirectory = System.getProperty("user.dir");
 
-				 // Specify the relative path to the image file within the project directory
-				 String imagePath = projectDirectory + File.separator + "images" + File.separator + "validationNo.png";
+			//	 Screen screen = new Screen();
+
+				// String workspacePath = System.getenv("WORKSPACE");
+				 //String imagePath = workspacePath + File.separator + "images" + File.separator + "validationNo.png";
 
 				 // Use the constructed image path
-				 Pattern wordPattern = new Pattern(imagePath);
-					Thread.sleep(3000); 
+			
+				//Pattern wordPattern = new Pattern(imagePath);
+					//Thread.sleep(3000); 
 
 		            // Double click on the word using SikuliX
-		            screen.doubleClick(wordPattern);
+		          //  screen.doubleClick(wordPattern);
+
+			        actions.doubleClick(textElement).perform();
+
 					Thread.sleep(3000); 
 
 		            actions.keyDown(Keys.CONTROL).sendKeys("c").keyUp(Keys.CONTROL).perform();
@@ -618,17 +625,25 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
 
 	 			subvalidationNo.sendKeys(Keys.CONTROL + "v");
 				Thread.sleep(3000); 
+				zz.executeScript("window.scrollBy(0,200)");
+				Thread.sleep(3000); 
 
-	 			driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-update-fee/section/div/div[2]/div/div/div/mat-vertical-stepper/div[3]/div/div/div/form/div[3]/div/button[2]/span[1]")).click();
+	 			driver.findElement(By.xpath("//span[text()=' Preview ']")).click();
+				Thread.sleep(3000); 
+				zz.executeScript("window.scrollBy(0,600)");
+				Thread.sleep(3000); 
 				Thread.sleep(3000); 
 				zz.executeScript("window.scrollBy(0,600)");
 				Thread.sleep(3000); 
 
-	 			driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-updatefee-preview/section/div/div[2]/div/div/div/div[3]/button[1]/span[1]")).click();
+	 			driver.findElement(By.xpath("//span[text()=' Save and Print ']")).click();
+
+	 	//		driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-updatefee-preview/section/div/div[2]/div/div/div/div[3]/button[1]/span[1]")).click();
 	
 	
 	 		String Subqpaymentrecpt	=driver.findElement(By.xpath("/html/body/div[4]/div/h2")).getText();
 	
+	 		System.out.println(Subqpaymentrecpt);
 	
 	         String originalsubsqpmt = Subqpaymentrecpt;
 
@@ -637,7 +652,7 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
 
              // Iterate through the parts to find the desired text
              String desiredTextt = null;
-             for (String part : parts) {
+             for (String part : partss) {
                  if (part.startsWith("NANA")) {
                      desiredTextt = part;
                      break;
@@ -650,8 +665,8 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
              } else {
                  //System.out.println("Desired text not found in the original text.");
              }
- 
-           
+  
+            
 	}
 
 }
