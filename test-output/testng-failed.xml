@@ -7,7 +7,6 @@
         <methods>
           <include name="Student_payment_complete_flow_Cash"/>
           <include name="TEEMSLOGIN"/>
-          <include name="teardown"/>
         </methods>
       </class> <!-- All_Flows.Student_Fresh_subpayment_complete_flow_Cash -->
     </classes>
