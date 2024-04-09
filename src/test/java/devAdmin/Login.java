@@ -44,12 +44,12 @@ public class Login {
 
 		
 
-/*
+
 	@AfterMethod()
 	public void teardown() {
 		driver.quit();
 	}	 
-	*/
+	
 }
 	
 	
