@@ -7,7 +7,7 @@
 
  <classes>
 
-    
+
 <class name="All_Flows.Upgradation">
                 <methods>
                     <include name="Upgradation_with_Cash"/>
@@ -27,20 +27,6 @@
                 </methods>
         </class>     
 
-
-
-
-
-
-
-
-<!-- 
-
-<class name="All_Flows.Batch_Change_Request">
-                <methods>
-                    <include name="Validating_Batch_Change_Request"/>
-                </methods>
-        </class>
   <class name="All_Flows.Student_Fresh_subpayment_complete_flow_credit_card">
 
                  <methods>
