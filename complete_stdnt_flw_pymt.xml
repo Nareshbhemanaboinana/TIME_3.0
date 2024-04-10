@@ -7,18 +7,185 @@
 
  <classes>
 
-    
-<class name="All_Flows.Upgradation">
+<class name="All_Flows.Batch_Change_Request">
                 <methods>
-                    <include name="Upgradation_with_Cash"/>
+                    <include name="Validating_Batch_Change_Request"/>
                 </methods>
-        </class>   
+        </class>
+
+<class name="All_Flows.Convert_Full_Payment__with_Discount_Cash_Payment">
+                <methods>
+                    <include name="Student_Convert_Full_Payment__with_Discount_Cash_Payment"/>
+                </methods>
+        </class>
+
+<class name="All_Flows.Convert_Full_Payment__with_Discount_Credit_Card_Payment">
+                <methods>
+                    <include name="Student_Convert_Full_Payment__with_Discount_Credit_Card_Payment"/>
+                </methods>
+        </class>
+
+
+<class name="All_Flows.Convert_Full_Payment__with_Discount_dd_cheque_Payment">
+                <methods>
+                    <include name="Student_Convert_Full_Payment__with_Discount_dd_cheque_Payment"/>
+                </methods>
+        </class>
+
+
+<class name="All_Flows.Convert_Full_Payment__with_Discount_DRCT_TRFR_BNK_Payment">
+                <methods>
+                    <include name="Student_Convert_Full_Payment__with_Discount_DRCT_TRFR_BNK_Payment"/>
+                </methods>
+        </class>
+
+
+<class name="All_Flows.Convert_Full_Payment__with_Discount_NEFT_Payment">
+                <methods>
+                    <include name="Student_Convert_Full_Payment__with_Discount_NEFT_Payment"/>
+                </methods>
+        </class>
+
+
+<class name="All_Flows.Convert_Full_Payment__with_Discount_Others_Payment">
+                <methods>
+                    <include name="Student_Convert_Full_Payment__with_Discount_Others_Payment"/>
+                </methods>
+        </class>
+
+
+<class name="All_Flows.Convert_Full_Payment__with_Discount_RTGS_Payment">
+                <methods>
+                    <include name="Student_Convert_Full_Payment__with_Discount_RTGS_Payment"/>
+                </methods>
+        </class>
+
+
+<class name="All_Flows.Convert_Full_Payment__with_Discount_TDS_Payment">
+                <methods>
+                    <include name="Student_Convert_Full_Payment__with_Discount_TDS_Payment"/>
+                </methods>
+        </class>
+
+
+<class name="All_Flows.Enrolling_Student_convert_Full_Pymnt_with_Cash">
+                <methods>
+                    <include name="Enrolling_Student_convert_Full_Peyment_with_Cash"/>
+                </methods>
+        </class>
+
+
+<class name="All_Flows.Enrolling_Student_convert_Full_Pymnt_with_Credit_Card">
+                <methods>
+                    <include name="Enrolling_Student_convert_Full_Peyment_with_Credit_Card"/>
+                </methods>
+        </class>
+
+
+<class name="All_Flows.Enrolling_Student_convert_Full_Pymnt_with_dd_cheque">
+                <methods>
+                    <include name="Enrolling_Student_convert_Full_Peyment_with_dd_cheque"/>
+                </methods>
+        </class>
+    
+
+<class name="All_Flows.Enrolling_Student_convert_Full_Pymnt_with_DRCT_TRFR_BANK">
+                <methods>
+                    <include name="Enrolling_Student_convert_Full_Peyment_with_Cash_DRCT_TRFR_BANK"/>
+                </methods>
+        </class>
+
+<class name="All_Flows.Enrolling_Student_convert_Full_Pymnt_with_NEFT">
+                <methods>
+                    <include name="Enrolling_Student_convert_Full_Peyment_with_NEFT"/>
+                </methods>
+        </class>
+
+
+<class name="All_Flows.Enrolling_Student_convert_Full_Pymnt_with_Others">
+                <methods>
+                    <include name="Enrolling_Student_convert_Full_Peyment_with_Others"/>
+                </methods>
+        </class>
+
+
+<class name="All_Flows.Enrolling_Student_convert_Full_Pymnt_with_RTGS">
+                <methods>
+                    <include name="Enrolling_Student_convert_Full_Peyment_with_RTGS"/>
+                </methods>
+        </class>
+
+<class name="All_Flows.Enrolling_Student_convert_Full_Pymnt_with_TDS">
+                <methods>
+                    <include name="Enrolling_Student_convert_Full_Peyment_with_TDS"/>
+                </methods>
+        </class>
+
+  
 <class name="All_Flows.Re_Enrollment">
                 <methods>
                     <include name="Re_Enrollment_with_Cash"/>
                 </methods>
         </class>   
+ 
+<class name="All_Flows.Refund_Request">
+                <methods>
+                    <include name="Validating_Refund_Request"/>
+                </methods>
+        </class>  
 
+
+<class name="All_Flows.Student_Fresh_Enrollment_Complete_Flow_Cash_Discount">
+                <methods>
+                    <include name="Student_Fresh_Enrollment_With_Discount_Cash"/>
+                </methods>
+        </class>  
+
+<class name="All_Flows.Student_Fresh_Enrollment_Complete_Flow_Credi_Card_Discount">
+                <methods>
+                    <include name="Student_payment_complete_flow_Credi_Card_Discount"/>
+                </methods>
+        </class>  
+
+<class name="All_Flows.Student_Fresh_Enrollment_Complete_Flow_dd_cheque_Discount">
+                <methods>
+                    <include name="Student_payment_complete_flow_dd_cheque_Discount"/>
+                </methods>
+        </class> 
+
+
+<class name="All_Flows.Student_Fresh_Enrollment_complete_flow_DRCT_TNFR_BNK_Discount">
+                <methods>
+                    <include name="Student_payment_complete_flow_DRCT_TNFR_BNK_Discount"/>
+                </methods>
+        </class> 
+
+<class name="All_Flows.Student_Fresh_Enrollment_complete_flow_NEFT_Discount">
+                <methods>
+                    <include name="Student_payment_complete_flow_NEFT_Discount"/>
+                </methods>
+        </class> 
+
+
+<class name="All_Flows.Student_Fresh_Enrollment_complete_flow_Others_Discount">
+                <methods>
+                    <include name="Student_payment_complete_flow_Others_Discount"/>
+                </methods>
+        </class> 
+
+
+<class name="All_Flows.Student_Fresh_Enrollment_complete_flow_RTGS_Discount">
+                <methods>
+                    <include name="Student_payment_complete_flow_RTGS_Discount"/>
+                </methods>
+        </class>
+
+
+<class name="All_Flows.Student_Fresh_Enrollment_complete_flow_TDS_Discount">
+                <methods>
+                    <include name="Student_payment_complete_flow_TDS_Discount"/>
+                </methods>
+        </class>
 
 
   <class name="All_Flows.Student_Fresh_subpayment_complete_flow_Cash">
@@ -28,11 +195,6 @@
         </class>     
 
 
-<class name="All_Flows.Batch_Change_Request">
-                <methods>
-                    <include name="Validating_Batch_Change_Request"/>
-                </methods>
-        </class>
   <class name="All_Flows.Student_Fresh_subpayment_complete_flow_credit_card">
 
                  <methods>
@@ -76,6 +238,14 @@
                     <include name="Student_payment_complete_flow_TDS"/>
                 </methods>
         </class>
+
+
+<class name="All_Flows.Upgradation">
+                <methods>
+                    <include name="Upgradation_with_Cash"/>
+                </methods>
+        </class> 
+
        </classes>
 
 			

@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="All_Flows.Student_Fresh_subpayment_complete_flow_Cash">
+      <class name="All_Flows.Batch_Change_Request">
         <methods>
-          <include name="Student_payment_complete_flow_Cash"/>
-          <include name="TEEMSLOGIN"/>
+          <include name="Validating_Batch_Change_Request"/>
         </methods>
-      </class> <!-- All_Flows.Student_Fresh_subpayment_complete_flow_Cash -->
+      </class> <!-- All_Flows.Batch_Change_Request -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
