@@ -19,9 +19,6 @@ import devAdmin.Login;
 
 public class Batch extends Login {
 
-	
-	
-	
 	@Test
 	public void ADD_Batch() throws InterruptedException {
 		Faker fk = new Faker();
@@ -98,12 +95,12 @@ public class Batch extends Login {
 	
 			  	
 			      driver.findElement(By.xpath("//input[@formcontrolname='sName']")).sendKeys(Batch_Name+"_Batch_"+randNo);
-			      driver.findElement(By.xpath("//input[@formcontrolname='sCode']")).sendKeys(Batch_Name+"_"+randNo);
+			      driver.findElement(By.xpath("//input[@formcontrolname='sCode']")).sendKeys(Batch_Name);
 			  	zz.executeScript("window.scrollBy(0,500)");
 
 			      	  	
 			  	System.out.println("Batch Name :"+Batch_Name+"_Batch_"+randNo);
-			  	System.out.println("Batch Code :"+Batch_Name+"_"+randNo);
+			  	System.out.println("Batch Code :"+Batch_Name);
 
 				
 		
