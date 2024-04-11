@@ -77,7 +77,7 @@
           <version>2.22.1</version>
           <configuration>
              <suiteXmlFiles>
-                  <suiteFile>complete_stdnt_flw_pymt.xml</suiteFile>
+                  <suiteFile>complete_stdnt_flw_pymt1.xml</suiteFile>
              </suiteXmlFiles>
          </configuration>       
         </plugin>
