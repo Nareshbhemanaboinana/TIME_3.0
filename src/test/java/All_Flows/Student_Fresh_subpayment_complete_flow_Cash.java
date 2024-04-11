@@ -372,7 +372,9 @@ public class Student_Fresh_subpayment_complete_flow_Cash extends Login  {
 	                driver.findElement(By.xpath("//input[@formcontrolname='ddOrChequeDate']")).sendKeys(df1.format(dt));	
 
 	                Thread.sleep(3000);
-	                driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/div/div/mat-vertical-stepper/div[3]/div/div/div/form/div[1]/div[2]/div[3]/mat-form-field/div/div[1]/div[3]/mat-select/div/div[2]")).click();
+	             //   driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/div/div/mat-vertical-stepper/div[3]/div/div/div/form/div[1]/div[2]/div[3]/mat-form-field/div/div[1]/div[3]/mat-select/div/div[2]")).click();
+		               driver.findElement(By.cssSelector("mat-select[formcontrolname='bankName']")).click();
+
 	                Thread.sleep(3000);
 	                UM.selectOptionByText(driver, "HSBC");
 	            	
@@ -535,7 +537,8 @@ public class Student_Fresh_subpayment_complete_flow_Cash extends Login  {
 		               }
 		               
 					   Thread.sleep(5000);
-					
+	
+					   /*
 					   driver.navigate().refresh();
 		          
 
@@ -664,7 +667,7 @@ public class Student_Fresh_subpayment_complete_flow_Cash extends Login  {
              } else {
                  //System.out.println("Desired text not found in the original text.");
              }
-  
+   */
            
 	}
 

@@ -1,14 +1,12 @@
 package All_Flows;
 
+import java.awt.HeadlessException;
 import java.awt.Toolkit;
-import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.StringSelection;
-import java.io.File;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.UnsupportedFlavorException;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -16,15 +14,9 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.FindFailed;
-import org.sikuli.script.Pattern;
-import org.sikuli.script.Screen;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
@@ -32,14 +24,12 @@ import com.github.javafaker.Faker;
 import Components.Universal_methods;
 import devAdmin.Login;
 
-public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
-
+public class Enrolling_Student_convert_Full_Pymnt_with_TDS extends Login{
 	
-
 	@Test
-	public void Student_payment_complete_flow_NEFT() throws InterruptedException, FindFailed {
-		
-		String optionText2 = "NEFT";
+	public void Enrolling_Student_convert_Full_Peyment_with_TDS() throws InterruptedException, FindFailed, HeadlessException, UnsupportedFlavorException, IOException {
+
+		String optionText2 = "TDS";
 		
 		Faker fk = new Faker();
 		Universal_methods UM=new Universal_methods ();
@@ -296,8 +286,26 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
 				UM.selectOptionByText(driver, "MBA_Batch");
 				System.out.println("Enrolled Batch is: MBA_Batch");
 				Thread.sleep(4000);
+		        actions.sendKeys(Keys.TAB).perform();
+							Thread.sleep(3000);
 
-				  WebElement typeOfPayment = driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body/div/div/div/mat-vertical-stepper/div[2]/div/div/div/form[1]/div/div[6]/div[1]/mat-form-field/div/div[1]/div[3]/mat-select/div/div[2]"));
+					    //    int Discountamnt = Integer.parseInt(driver.findElement(By.xpath("//input[@formcontrolname='discountAmount']")).getText());
+
+					        actions.keyDown(Keys.CONTROL).sendKeys("c").keyUp(Keys.CONTROL).perform();
+
+					        // Pause briefly to allow time for the system to process the copy action
+					        Thread.sleep(1000);
+
+					        // Access the system clipboard and retrieve the copied data
+					        String copiedData1 = (String) Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
+
+					        // Convert the copied data to an integer
+					        int copiedInteger1 = Integer.parseInt(copiedData1);
+
+				driver.findElement(By.xpath("//h5[text()=' Convert to full payment ']")).click();
+
+				
+			/*	  WebElement typeOfPayment = driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body/div/div/div/mat-vertical-stepper/div[2]/div/div/div/form[1]/div/div[6]/div[1]/mat-form-field/div/div[1]/div[3]/mat-select/div/div[2]"));
 			        
 			        // Click on the dropdown
 				   typeOfPayment.click();
@@ -307,11 +315,27 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
 				zz.executeScript("window.scrollBy(0,400)");
 				   Thread.sleep(3000);
 
-				   String fstinstallment =driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/div/div/mat-vertical-stepper/div[2]/div/div/div/form/div[1]/div[7]/div/div[1]/div/div/table/tbody/tr[1]/td[2]")).getText();
+			        int fstinstallment = Integer.parseInt(driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/div/div/mat-vertical-stepper/div[2]/div/div/div/form/div[1]/div[7]/div/div[1]/div/div/table/tbody/tr[1]/td[2]")).getText());
+        */
+				   //int fstinstallment =driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/div/div/mat-vertical-stepper/div[2]/div/div/div/form/div[1]/div[7]/div/div[1]/div/div/table/tbody/tr[1]/td[2]")).getText();
 				   Thread.sleep(3000);
 
 					zz.executeScript("window.scrollBy(0,400)");
 					   Thread.sleep(3000);
+						zz.executeScript("window.scrollBy(0,200)");
+
+			  			Thread.sleep(3000);
+				
+				int Firstinstall= copiedInteger1;
+		        String fstinstallmentString = String.valueOf(Firstinstall);
+		        //System.out.println("Discount Amount :"+copiedInteger);
+
+		        System.out.println("full paying Amount:"+fstinstallmentString);
+				zz.executeScript("window.scrollBy(0,-100)");
+
+               
+				Thread.sleep(3000);
+			//	zz.executeScript("window.scrollBy(0,-500)");
 
 				//   driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/div/div/mat-vertical-stepper/div[2]/div/div/div/form/div[2]/button[2]/span[1]")).click();
 				  // Thread.sleep(3000);
@@ -347,7 +371,7 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
 				   Thread.sleep(3000);
 				 //  Thread.sleep(3000);
 
-					driver.findElement(By.xpath("//input[@formcontrolname='totalAmountPaid']")).sendKeys(fstinstallment);
+					driver.findElement(By.xpath("//input[@formcontrolname='totalAmountPaid']")).sendKeys(fstinstallmentString);
 					   Thread.sleep(3000);
 
 				//	driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/div/div/mat-vertical-stepper/div[3]/div/div/div/form/div[2]/button[2]/span[1]")).click();
@@ -380,7 +404,7 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
 	                UM.selectOptionByText(driver, "HSBC");
 	            	
 	                Thread.sleep(3000);
-	                driver.findElement(By.xpath("//input[@formcontrolname='totalAmountPaid']")).sendKeys(fstinstallment);	
+	                driver.findElement(By.xpath("//input[@formcontrolname='totalAmountPaid']")).sendKeys(fstinstallmentString);	
 	                Thread.sleep(3000);
 
 	             //   driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/div/div/mat-vertical-stepper/div[3]/div/div/div/form/div[2]/button[2]/span[1]")).click();
@@ -393,7 +417,7 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
 		                Thread.sleep(3000);
 
 	                	driver.findElement(By.xpath("//input[@formcontrolname='creditCardAckNo']")).sendKeys(ackNumber);	
-	                	   driver.findElement(By.xpath("//input[@formcontrolname='totalAmountPaid']")).sendKeys(fstinstallment);	
+	                	   driver.findElement(By.xpath("//input[@formcontrolname='totalAmountPaid']")).sendKeys(fstinstallmentString);	
 	   	                Thread.sleep(3000);
 	   	
 	   	             //   driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/div/div/mat-vertical-stepper/div[3]/div/div/div/form/div[2]/button[2]/span[1]")).click();
@@ -406,7 +430,7 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
 		                Thread.sleep(3000);
 	                	driver.findElement(By.xpath("//input[@formcontrolname='referrenceNo']")).sendKeys(neftReferenceNumber);	
 
-	                	  driver.findElement(By.xpath("//input[@formcontrolname='totalAmountPaid']")).sendKeys(fstinstallment);	
+	                	  driver.findElement(By.xpath("//input[@formcontrolname='totalAmountPaid']")).sendKeys(fstinstallmentString);	
 		   	                Thread.sleep(3000);
 		   	
 		   	             //   driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/div/div/mat-vertical-stepper/div[3]/div/div/div/form/div[2]/button[2]/span[1]")).click();
@@ -418,7 +442,7 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
 	                	//Optionspayment.click();
 		                Thread.sleep(3000);
 	                	driver.findElement(By.xpath("//input[@formcontrolname='referrenceNo']")).sendKeys(rtgsReferenceNumber);	
-	                	  driver.findElement(By.xpath("//input[@formcontrolname='totalAmountPaid']")).sendKeys(fstinstallment);	
+	                	  driver.findElement(By.xpath("//input[@formcontrolname='totalAmountPaid']")).sendKeys(fstinstallmentString);	
 		   	                Thread.sleep(3000);
 		   	
 		   	              //  driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/div/div/mat-vertical-stepper/div[3]/div/div/div/form/div[2]/button[2]/span[1]")).click();
@@ -430,7 +454,7 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
 	               // 	Optionspayment.click();
 		                Thread.sleep(3000);
 	                	driver.findElement(By.xpath("//input[@formcontrolname='referrenceNo']")).sendKeys(referenceNumber);	
-	                	  driver.findElement(By.xpath("//input[@formcontrolname='totalAmountPaid']")).sendKeys(fstinstallment);	
+	                	  driver.findElement(By.xpath("//input[@formcontrolname='totalAmountPaid']")).sendKeys(fstinstallmentString);	
 		   	                Thread.sleep(3000);
 		   	
 		   	              //  driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/div/div/mat-vertical-stepper/div[3]/div/div/div/form/div[2]/button[2]/span[1]")).click();
@@ -441,7 +465,7 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
 	                	//Optionspayment.click();
 		                Thread.sleep(3000);
 
-	                	driver.findElement(By.xpath("//input[@formcontrolname='totalAmountPaid']")).sendKeys(fstinstallment);	
+	                	driver.findElement(By.xpath("//input[@formcontrolname='totalAmountPaid']")).sendKeys(fstinstallmentString);	
 	                	driver.findElement(By.xpath("//input[@formcontrolname='paymentRemarks']")).sendKeys("No");	
 	   	              
 	              //  driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/div/div/mat-vertical-stepper/div[3]/div/div/div/form/div[2]/button[2]/span[1]")).click();
@@ -454,7 +478,7 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
 		                Thread.sleep(3000);
 
 
-	                	driver.findElement(By.xpath("//input[@formcontrolname='totalAmountPaid']")).sendKeys(fstinstallment);	
+	                	driver.findElement(By.xpath("//input[@formcontrolname='totalAmountPaid']")).sendKeys(fstinstallmentString);	
 	   	             //   driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/div/div/mat-vertical-stepper/div[3]/div/div/div/form/div[2]/button[2]/span[1]")).click();
 
 		            }
@@ -463,17 +487,11 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
 	                Thread.sleep(3000);
 	                optionText="";	   	    
 	                }
-	                    // Default action if option not matched
-	                 
-	            }// Exit the loop once the desired option is found and clicked
-				
-				}
-				
-	            Thread.sleep(3000);
-				zz.executeScript("window.scrollBy(0,900)");
-	            Thread.sleep(3000);
+				} 
+				}   // Default action if option not matched
+	  			Thread.sleep(3000);
 
-
+				zz.executeScript("window.scrollBy(0,300)");
 
 	            WebElement formFilledBy = driver.findElement(By.cssSelector("mat-select[formcontrolname='formFilledBy']"));
 				Thread.sleep(3000);
@@ -482,12 +500,14 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
 			   formFilledBy.click();
 			UM.selectOptionByText(driver,  "Parents");
 						   Thread.sleep(3000);
-	//   Thread.sleep(3000);
+							zz.executeScript("window.scrollBy(0,500)");
+							  Thread.sleep(3000);
 
-				driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body/div/div/div/mat-vertical-stepper/div[2]/div/div/div/form[3]/div[1]/div[2]/mat-checkbox/label/span[1]")).click();
+				driver.findElement(By.xpath("//h5[text()=' Student Signed On Rules & Regulations ']")).click();
+			   
+				//driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body/div/div/div/mat-vertical-stepper/div[2]/div/div/div/form[3]/div[1]/div[2]/mat-checkbox/label/span[1]")).click();
 				   Thread.sleep(3000);
 
-					zz.executeScript("window.scrollBy(0,500)");
 					   Thread.sleep(3000);
 
 		            // Simulate pressing the Tab key
@@ -507,13 +527,14 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
 					   Thread.sleep(3000);
 
 		               driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body/div/div/div/mat-vertical-stepper/div[2]/div/div/div/div[4]/div/button[3]/span[1]")).click();
-		               
-		               WebElement Student=driver.findElement(By.xpath("/html/body/div[4]/div/h2"));
+					   Thread.sleep(3000);
+ 
+		               WebElement Student=driver.findElement(By.xpath("/html/body/div[3]/div/h2"));
 				
 		               String StudentID=Student.getText();
 		               System.out.println(StudentID);
 		               
-		               String ReceiptNo= driver.findElement(By.xpath("/html/body/div[4]/div/div[2]")).getText();
+		               String ReceiptNo= driver.findElement(By.xpath("/html/body/div[3]/div/div[2]")).getText();
 		               System.out.println(ReceiptNo);
 
 		               String originalText = StudentID;
@@ -538,137 +559,12 @@ public class Student_Fresh_subpayment_complete_flow_NEFT extends Login  {
 		               }
 		               
 					   Thread.sleep(5000);
-					
-					   driver.navigate().refresh();
-		          
 
-		 			  WebElement svoenext = driver.findElement(By.xpath("//a[@href='#/payments/individual-student']"));
-		 				//JavascriptExecutor zz = (JavascriptExecutor) driver;
-		 				zz.executeScript("arguments[0].scrollIntoView()", svoenext);
-		 				Thread.sleep(5000);
-		 				zz.executeScript("arguments[0].click()", svoenext);
-		 				Thread.sleep(6000);
-		 		
-		 			driver.findElement(By.xpath("//input[@formcontrolname='studentId']")).sendKeys(desiredText);
-					Thread.sleep(3000); 
-
-		 			zz.executeScript("window.scrollBy(0,500)");
-					Thread.sleep(3000); 
-
-					driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-update-fee/section/div/div[2]/div/div/div/mat-vertical-stepper/div[1]/div/div/div/form/div[3]/button/span[1]")).click();
-					Thread.sleep(3000); 
-
-				String secinstall=	driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-update-fee/section/div/div[2]/div/div/div/mat-vertical-stepper/div[2]/div/div/div/div/div/div/div/div/table/tbody/tr[2]/td[2]")).getText();
-				Thread.sleep(3000); 
-
-				driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-update-fee/section/div/div[2]/div/div/div/mat-vertical-stepper/div[2]/div/div/div/form/div[1]/div[1]/mat-form-field/div/div[1]/div[3]/mat-select/div/div[2]")).click();
-				Thread.sleep(3000); 
-
-				List<WebElement> modeofpayments = driver.findElements(By.cssSelector("mat-option"));
-				//Loop through the options to find the desired one
-				for (WebElement option : modeofpayments) {
-				if (option.getText().equals("Cash")) {
-			     // Click on the desired option
-				   option.click();
-				   Thread.sleep(3000);
-				   break; // Exit the loop once the desired option is found and clicked
-				}
-				}
-	
-				driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-update-fee/section/div/div[2]/div/div/div/mat-vertical-stepper/div[2]/div/div/div/form/div[1]/div[2]/mat-form-field/div/div[1]/div[3]/mat-select/div/div[2]/div")).click();
-				Thread.sleep(3000); 
-
-				List<WebElement> placeofs = driver.findElements(By.cssSelector("mat-option"));
-				//Loop through the options to find the desired one
-				//Loop through the options to find the desired one
-				for (int i=0; i<=placeofs.size()-1; i++) {
-					placeofs.get(1).click();
-					Thread.sleep(3000); 
-					break;
-				   
-
-					}
-				Thread.sleep(3000); 
-
-				driver.findElement(By.xpath("//input[@formcontrolname='amount']")).sendKeys(secinstall);
-				zz.executeScript("window.scrollBy(0,400)");
-				Thread.sleep(3000); 
-
-				driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-update-fee/section/div/div[2]/div/div/div/mat-vertical-stepper/div[2]/div/div/div/form/div[2]/button[2]/span[1]")).click();
-				Thread.sleep(3000); 
-
-		        WebElement textElement = driver.findElement(By.xpath("//mat-label[contains(text(), 'Validation No ')]"));
-
-
-			//	 Screen screen = new Screen();
-
-				// String workspacePath = System.getenv("WORKSPACE");
-				 //String imagePath = workspacePath + File.separator + "images" + File.separator + "validationNo.png";
-
-				 // Use the constructed image path
+	              
 			
-				//Pattern wordPattern = new Pattern(imagePath);
-					//Thread.sleep(3000); 
+				
 
-		            // Double click on the word using SikuliX
-		          //  screen.doubleClick(wordPattern);
-
-			        actions.doubleClick(textElement).perform();
-
-					Thread.sleep(3000); 
-
-		            actions.keyDown(Keys.CONTROL).sendKeys("c").keyUp(Keys.CONTROL).perform();
-					Thread.sleep(3000); 
-
-	 			//String validno=driver.findElement(By.xpath("//input[@formcontrolname='vNum1']")).getText();
-				//Thread.sleep(3000); 
-
-	 			WebElement  subvalidationNo =driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-update-fee/section/div/div[2]/div/div/div/mat-vertical-stepper/div[3]/div/div/div/form/div[1]/div[2]/mat-form-field/div/div[1]/div[3]/input"));
-
-	 			subvalidationNo.sendKeys(Keys.CONTROL + "v");
-				Thread.sleep(3000); 
-				zz.executeScript("window.scrollBy(0,200)");
-				Thread.sleep(3000); 
-
-	 			driver.findElement(By.xpath("//span[text()=' Preview ']")).click();
-				Thread.sleep(3000); 
-				zz.executeScript("window.scrollBy(0,600)");
-				Thread.sleep(3000); 
-				Thread.sleep(3000); 
-				zz.executeScript("window.scrollBy(0,600)");
-				Thread.sleep(3000); 
-
-	 			driver.findElement(By.xpath("//span[text()=' Save and Print ']")).click();
-
-	 	//		driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-updatefee-preview/section/div/div[2]/div/div/div/div[3]/button[1]/span[1]")).click();
-	
-	
-	 		String Subqpaymentrecpt	=driver.findElement(By.xpath("/html/body/div[4]/div/h2")).getText();
-	
-	 		System.out.println(Subqpaymentrecpt);
-	
-	         String originalsubsqpmt = Subqpaymentrecpt;
-
-             // Split the text by spaces
-             String[] partss = originalsubsqpmt.split(" ");
-
-             // Iterate through the parts to find the desired text
-             String desiredTextt = null;
-             for (String part : partss) {
-                 if (part.startsWith("NANA")) {
-                     desiredTextt = part;
-                     break;
-                 }
-             }
-
-             // Print the desired text
-             if (desiredTextt != null) {
-                 System.out.println("Receipt ID: " + desiredTextt);
-             } else {
-                 //System.out.println("Desired text not found in the original text.");
-             }
-  
-            
+		
+		
 	}
-
 }

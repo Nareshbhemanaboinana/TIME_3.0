@@ -20,8 +20,7 @@ import devAdmin.Login;
 
 public class College_Level_Enquiry_Add extends Login{
 	
-	@Test
-	public void College_Level_Enquiry_Adding() throws InterruptedException {
+	public void  College_Level_Enquiry_Add() throws InterruptedException {
 		
 		Faker fk = new Faker();
 		Universal_methods UM=new Universal_methods ();

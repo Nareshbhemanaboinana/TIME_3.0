@@ -41,15 +41,13 @@ public class Login {
 		Thread.sleep(5000);
 	}
 		 
-
-		
-/*
-
 	@AfterMethod()
 	public void teardown() {
 		driver.quit();
 	}	 
-	*/
+	
+	
+	
 }
 	
 	

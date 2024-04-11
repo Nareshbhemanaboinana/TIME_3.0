@@ -6,26 +6,68 @@
 <test name="login">
 
  <classes>
-
-
-<class name="All_Flows.Upgradation">
                 <methods>
-                    <include name="Upgradation_with_Cash"/>
+                    <include name="Enrolling_Student_convert_Full_Peyment_with_Cash_DRCT_TRFR_BANK"/>
                 </methods>
-        </class>   
+        </class>
+
+<class name="All_Flows.Enrolling_Student_convert_Full_Pymnt_with_NEFT">
+                <methods>
+                    <include name="Enrolling_Student_convert_Full_Peyment_with_NEFT"/>
+                </methods>
+        </class>
+
+
+<class name="All_Flows.Enrolling_Student_convert_Full_Pymnt_with_Others">
+                <methods>
+                    <include name="Enrolling_Student_convert_Full_Peyment_with_Others"/>
+                </methods>
+        </class>
+
+
+<class name="All_Flows.Enrolling_Student_convert_Full_Pymnt_with_RTGS">
+                <methods>
+                    <include name="Enrolling_Student_convert_Full_Peyment_with_RTGS"/>
+                </methods>
+        </class>
+
+<class name="All_Flows.Enrolling_Student_convert_Full_Pymnt_with_TDS">
+                <methods>
+                    <include name="Enrolling_Student_convert_Full_Peyment_with_TDS"/>
+                </methods>
+        </class>
+
+  
 <class name="All_Flows.Re_Enrollment">
                 <methods>
                     <include name="Re_Enrollment_with_Cash"/>
                 </methods>
         </class>   
-
-
-
-  <class name="All_Flows.Student_Fresh_subpayment_complete_flow_Cash">
+ 
+<class name="All_Flows.Refund_Request">
                 <methods>
-                    <include name="Student_payment_complete_flow_Cash"/>
+                    <include name="Validating_Refund_Request"/>
                 </methods>
-        </class>     
+        </class>  
+
+
+<class name="All_Flows.Student_Fresh_Enrollment_Complete_Flow_Cash_Discount">
+                <methods>
+                    <include name="Student_Fresh_Enrollment_With_Discount_Cash"/>
+                </methods>
+        </class>  
+
+<class name="All_Flows.Student_Fresh_Enrollment_Complete_Flow_Credi_Card_Discount">
+                <methods>
+                    <include name="Student_payment_complete_flow_Credi_Card_Discount"/>
+                </methods>
+        </class>  
+
+<class name="All_Flows.Student_Fresh_Enrollment_Complete_Flow_dd_cheque_Discount">
+                <methods>
+                    <include name="Student_payment_complete_flow_dd_cheque_Discount"/>
+                </methods>
+        </class> 
 
   <class name="All_Flows.Student_Fresh_subpayment_complete_flow_credit_card">
 
@@ -33,13 +75,13 @@
                     <include name="Student_payment_complete_flow_credit_card"/>
                 </methods>
         </class>   
-	 	        <class name="All_Flows.Student_Fresh_subpayment_complete_flow_dd_cheque">
+  <class name="All_Flows.Student_Fresh_subpayment_complete_flow_dd_cheque">
 
                  <methods>
                     <include name="Student_payment_complete_flow_DD_Cheque"/>
                 </methods>
  </class>   
-		         <class name="All_Flows.Student_Fresh_subpayment_complete_flow_DRCT_TNFR_BNK">
+  <class name="All_Flows.Student_Fresh_subpayment_complete_flow_DRCT_TNFR_BNK">
 
                  <methods>
                     <include name="Student_payment_complete_flow_DRCT_TNFR_BNK"/>
@@ -69,15 +111,16 @@
                  <methods>
                     <include name="Student_payment_complete_flow_TDS"/>
                 </methods>
-        </class> -->
+        </class>
+
+
+<class name="All_Flows.Upgradation">
+                <methods>
+                    <include name="Upgradation_with_Cash"/>
+                </methods>
+        </class> 
+
        </classes>
-
-			
-
-		
-
-          
-
 
 </test>
 </suite>

@@ -43,8 +43,6 @@ public class Login1 {
 		 
 
 		
-
-
 	@AfterMethod()
 	public void teardown() {
 		driver.quit();
