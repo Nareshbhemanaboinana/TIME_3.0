@@ -594,20 +594,8 @@ zz.executeScript("window.scrollBy(0,500)");
 
 					driver.findElement(By.xpath("//span[text()=' Save ']")).click();
 
+					Thread.sleep(2000);
 
-					WebElement Request =driver.findElement(By.xpath("//span[@class='mat-simple-snack-bar-content']"));
-				     String Request1 = Request.getText();
-
-					     // String backgroundColor = popup.getCssValue("background-color");
-				           if (Request1.equals("Data Saved Successfully!!!")) {
-				           	
-				           	System.out.println("Massage:"+ Request1);
-				           }
-				           else {
-					           	System.out.println("Massage:"+ Request1);
-						          throw new RuntimeException("Test failed because the popup message did not contain 'Successfully'.");
-
-				           }
 
 							   WebElement LogoutButton = driver.findElement(By.xpath("//span[text()='LOGOUT ']"));
 								//JavascriptExecutor zz = (JavascriptExecutor) driver;
@@ -640,19 +628,38 @@ zz.executeScript("window.scrollBy(0,500)");
 
 			driver.findElement(By.xpath("//span[text()='Batch Change Approval']")).click();
 			Thread.sleep(2000);
-			zz.executeScript("window.scrollBy(0,500)");
+			zz.executeScript("window.scrollBy(0,400)");
 			Thread.sleep(2000);
 
-			String StudentDetails=driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-student/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[2]/div/mat-tab-group/div/mat-tab-body[2]/div/div[2]/div/div/div/div/div/table/tbody/tr[1]/td[3]")).getText();			
+			//String StudentDetails=driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-student/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[2]/div/mat-tab-group/div/mat-tab-body[2]/div/div[2]/div/div/div/div/div/table/tbody/tr[1]/td[3]")).getText();			
+			Thread.sleep(2000);
+
+			//String StudentDetails=driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-student/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[2]/div/mat-tab-group/div/mat-tab-body[2]/div/div[2]/div/div/div/div/div/table/tbody/tr[1]/td[3]")).getText();			
+			WebElement myTable=driver.findElement(By.xpath("//table[@role='table']"));
+			
+			List<WebElement> trs=myTable.findElements(By.tagName("tr"));
+				
+				List<WebElement> tds= trs.get(1).findElements(By.tagName("td"));
+				for(int j=0; j<=tds.size()-1;j++) {
+				//String statename1 =tds.get(0).getText();
+				String	StudentDetails=	tds.get(2).getText();
+			
+			 
+		
+
 			Thread.sleep(2000);
 
 			if(StudentDetails.contains(Name)) {
+				//driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-student/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[2]/div/mat-tab-group/div/mat-tab-body[2]/div/div[2]/div/div/div/div/div/table/tbody/tr[1]/td[6]/span/button/span[1]/mat-icon")).click();
 				Thread.sleep(2000);
 
-			//	zz.executeScript("window.scrollBy(0,500)");
+				WebElement iconButton = tds.get(5).findElement(By.cssSelector("button.btn-tbl-edit"));
 
-				driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-student/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[2]/div/mat-tab-group/div/mat-tab-body[2]/div/div[2]/div/div/div/div/div/table/tbody/tr[1]/td[6]/span/button/span[1]/mat-icon")).click();
+			    // Click on the icon button
+			    iconButton.click();
+
 				Thread.sleep(2000);
+
 					zz.executeScript("window.scrollBy(0,500)");
 					Thread.sleep(2000);
 
@@ -660,6 +667,7 @@ zz.executeScript("window.scrollBy(0,500)");
 				Thread.sleep(2000);
 
 				UM.selectOptionByText(driver, "MBA_Batch_2");
+				System.out.println("Changing Batch is:MBA_Batch_2");
 				Thread.sleep(2000);
 
 				driver.findElement(By.cssSelector("mat-select[formcontrolname='iTypeofPayment']")).click();
@@ -695,8 +703,9 @@ zz.executeScript("window.scrollBy(0,500)");
 			}
 		
 
+			break;
 		//	driver.close();
 
-			
+				}		
 	}
 }

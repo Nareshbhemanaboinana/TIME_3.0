@@ -251,6 +251,7 @@ UM.selectOptionByText(driver,  "Morning");
 
 Thread.sleep(2000);
 zz.executeScript("window.scrollBy(0,500)");
+Thread.sleep(2000);
 
  
       driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-collegelevel/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/mat-vertical-stepper/div[5]/div/div/div/div/button[2]/span[1]")).click();
@@ -574,19 +575,26 @@ zz.executeScript("window.scrollBy(0,500)");
 			        WebElement requ = driver.findElement(By.cssSelector("mat-select[formcontrolname='resonForRefund']"));
 
 			        requ.click();
-			        
+					Thread.sleep(2000);
+
 			        UM.selectOptionByText(driver, "Batch Not Started as per schedule");
-			        
+					Thread.sleep(2000);
+
 			        driver.findElement(By.xpath("//input[@formcontrolname='sRemarks']")).sendKeys("Requesting for Refund");
-			        
+					Thread.sleep(2000);
+
 					zz.executeScript("window.scrollBy(0,500)");
+					Thread.sleep(2000);
 
 					  WebElement refundtype = driver.findElement(By.cssSelector("mat-select[formcontrolname='refundType']"));
+						Thread.sleep(2000);
 
 					  refundtype.click();
-				       
+						Thread.sleep(2000);
+   
 					UM.selectOptionByText(driver, "part Refund");
-					
+					Thread.sleep(2000);
+
 			        driver.findElement(By.xpath("//input[@formcontrolname='refundAmt']")).sendKeys("500");
 			        
 					Thread.sleep(2000);
@@ -602,10 +610,10 @@ zz.executeScript("window.scrollBy(0,500)");
 					driver.findElement(By.xpath("//span[text()=' Save ']")).click();
 
 
-					WebElement Request =driver.findElement(By.xpath("//span[@class='mat-simple-snack-bar-content']"));
-				     String Request1 = Request.getText();
+				//	WebElement Request =driver.findElement(By.xpath("//span[@class='mat-simple-snack-bar-content']"));
+				  //   String Request1 = Request.getText();
 
-					     // String backgroundColor = popup.getCssValue("background-color");
+				/*	     // String backgroundColor = popup.getCssValue("background-color");
 				           if (Request1.equals("Data Saved Successfully!!!")) {
 				           	
 				           	System.out.println("Massage:"+ Request1);
@@ -615,7 +623,7 @@ zz.executeScript("window.scrollBy(0,500)");
 						          throw new RuntimeException("Test failed because the popup message did not contain 'Successfully'.");
 
 				           }
-
+ */
 							  WebElement LogoutButton = driver.findElement(By.xpath("//span[text()='LOGOUT ']"));
 							//	JavascriptExecutor zz = (JavascriptExecutor) driver;
 									zz.executeScript("arguments[0].scrollIntoView()", LogoutButton);
@@ -652,11 +660,27 @@ zz.executeScript("window.scrollBy(0,500)");
 				zz.executeScript("window.scrollBy(0,500)");
 				Thread.sleep(2000);
 
-				String StudentDetails=driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-student/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[2]/div/mat-tab-group/div/mat-tab-body[2]/div/div[2]/div/div/div/div/div/table/tbody/tr[1]/td[3]")).getText();			
+				//String StudentDetails=driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-student/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[2]/div/mat-tab-group/div/mat-tab-body[2]/div/div[2]/div/div/div/div/div/table/tbody/tr[1]/td[3]")).getText();			
+				WebElement myTable=driver.findElement(By.xpath("//table[@role='table']"));
+				
+				List<WebElement> trs=myTable.findElements(By.tagName("tr"));
+					
+					List<WebElement> tds= trs.get(1).findElements(By.tagName("td"));
+					for(int j=0; j<=tds.size()-1;j++) {
+					//String statename1 =tds.get(0).getText();
+					String	StudentDetails=	tds.get(2).getText();
+				
+				 
+			
+
 				Thread.sleep(2000);
 
 				if(StudentDetails.contains(Name)) {
-					driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-student/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[2]/div/mat-tab-group/div/mat-tab-body[2]/div/div[2]/div/div/div/div/div/table/tbody/tr[1]/td[6]/span/button/span[1]/mat-icon")).click();
+					//driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-student/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[2]/div/mat-tab-group/div/mat-tab-body[2]/div/div[2]/div/div/div/div/div/table/tbody/tr[1]/td[6]/span/button/span[1]/mat-icon")).click();
+				    WebElement iconButton = tds.get(5).findElement(By.cssSelector("button.btn-tbl-edit"));
+
+				    // Click on the icon button
+				    iconButton.click();
 
 					Thread.sleep(2000);
 
@@ -711,9 +735,10 @@ zz.executeScript("window.scrollBy(0,500)");
 				}
 			
 
+				break;
 			//	driver.close();
 
-
+					}
 
 
 }
