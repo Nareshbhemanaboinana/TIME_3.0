@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Masters.Batch">
+      <class name="All_Flows.Batch_Change_Request">
         <methods>
-          <include name="ADD_Batch"/>
-          <include name="TEEMSLOGIN"/>
-          <include name="teardown"/>
+          <include name="Validating_Batch_Change_Request"/>
         </methods>
-      </class> <!-- Masters.Batch -->
+      </class> <!-- All_Flows.Batch_Change_Request -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

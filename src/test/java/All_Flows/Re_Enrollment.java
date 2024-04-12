@@ -635,7 +635,22 @@ zz.executeScript("window.scrollBy(0,500)");
 					   Thread.sleep(3000);
 
 					   driver.findElement(By.xpath("//span[text()=' Save and Print ']")).click();
+					 
+		               
+		               WebElement Students=driver.findElement(By.xpath("/html/body/div[4]/div/h2"));
+				
+		               String StudentIDs=Students.getText();
+		               System.out.println("Stundent Re-Enrollment Details :"+StudentIDs);
+		               
+		               String ReceiptNos= driver.findElement(By.xpath("/html/body/div[4]/div/div[2]")).getText();
+		               System.out.println("Stundent Re-Enrollment Receipt No:"+ReceiptNos);
+
+		              // String originalTextss = StudentIDs;
+
+		               
+
 					   
+					/*   
 						WebElement Approve =driver.findElement(By.xpath("//span[@class='mat-simple-snack-bar-content']"));
 						Thread.sleep(3000);
 
@@ -652,6 +667,6 @@ zz.executeScript("window.scrollBy(0,500)");
 
 							           }
 
-
+    */
 }
 }
