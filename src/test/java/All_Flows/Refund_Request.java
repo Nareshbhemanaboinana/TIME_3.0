@@ -135,7 +135,7 @@ String Name = fk.name().firstName();
  					UM.selectOptionByText(driver,  "Hyderabad");
 				  	Thread.sleep(2000);
 
-				      driver.findElement(By.xpath("//input[@ng-reflect-name='sMailingZipCode']")).sendKeys("500067");
+				      driver.findElement(By.xpath("//input[@formcontrolname='sMailingZipCode']")).sendKeys("500067");
 
 				      driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-collegelevel/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/mat-vertical-stepper/div[3]/div/div/div/form/div[1]/div[2]/div[1]/div/mat-checkbox/label/span[1]")).click();
 	                 Thread.sleep(2000);
@@ -510,6 +510,13 @@ Thread.sleep(2000);
 	               
 				   Thread.sleep(3000);
 
+					driver.findElement(By.xpath("//span[text()=' Preview Receipt ']")).click();
+					   Thread.sleep(3000);
+
+						driver.findElement(By.xpath("//span[text()=' Close ']")).click();
+						   Thread.sleep(3000);
+
+
 					driver.findElement(By.xpath("//span[text()=' Save and Print ']")).click();
 
 	            //   driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body/div/div/div/mat-vertical-stepper/div[2]/div/div/div/div[4]/div/button[3]/span[1]")).click();
@@ -593,10 +600,12 @@ Thread.sleep(2000);
 						Thread.sleep(2000);
    
 					UM.selectOptionByText(driver, "part Refund");
+			        System.out.println("Refund type is part Refund");
+
 					Thread.sleep(2000);
 
 			        driver.findElement(By.xpath("//input[@formcontrolname='refundAmt']")).sendKeys("500");
-			        
+			        System.out.println("Refund Amount is 500");
 					Thread.sleep(2000);
 
 					driver.findElement(By.cssSelector("mat-select[formcontrolname='iAuthorizedBy']")).click();

@@ -37,7 +37,7 @@ public class Manage_Staff extends Login1{
 		Thread.sleep(3000);
 	
 	 	
-	 	WebElement svenexxt = driver.findElement(By.xpath("//*[@id=\"leftsidebar\"]/div/ul/li[12]/ul/li[12]/a"));
+	 	WebElement svenexxt = driver.findElement(By.xpath("//a[@href='#/setups/franchisee']"));
 	 JavascriptExecutor zz = (JavascriptExecutor) driver;
 	 	zz.executeScript("arguments[0].scrollIntoView()", svenexxt);
 	 	Thread.sleep(4000);
@@ -125,7 +125,7 @@ public class Manage_Staff extends Login1{
 		
 		
 		
-		WebElement svenext = driver.findElement(By.xpath("//*[@id=\"leftsidebar\"]/div/ul/li[12]/ul/li[13]/a"));
+		WebElement svenext = driver.findElement(By.xpath("//a[@href='#/setups/office']"));
 	//	JavascriptExecutor zz = (JavascriptExecutor) driver;
 		zz.executeScript("arguments[0].scrollIntoView()", svenext);
 		Thread.sleep(4000);
@@ -235,7 +235,7 @@ public class Manage_Staff extends Login1{
 
 	  	zz.executeScript("window.scrollBy(0,-500)");
 
-			WebElement s1venext = driver.findElement(By.xpath("//*[@id=\"leftsidebar\"]/div/ul/li[12]/ul/li[13]/a"));
+			WebElement s1venext = driver.findElement(By.xpath("//a[@href='#/setups/office']"));
 		//	JavascriptExecutor zz = (JavascriptExecutor) driver;
 			zz.executeScript("arguments[0].scrollIntoView()", s1venext);
 			Thread.sleep(4000);
@@ -344,7 +344,7 @@ public class Manage_Staff extends Login1{
 
 
 		//  String Name = fk.name().firstName();
-		  WebElement svenextt = driver.findElement(By.xpath("//*[@id=\"leftsidebar\"]/div/ul/li[14]/ul/li[1]/a"));
+		  WebElement svenextt = driver.findElement(By.xpath("//a[@href='#/users-roles/manage-staff']"));
 		//	JavascriptExecutor zz = (JavascriptExecutor) driver;
 			zz.executeScript("arguments[0].scrollIntoView()", svenextt);
 			Thread.sleep(5000);
@@ -500,7 +500,7 @@ public class Manage_Staff extends Login1{
 
 
 	 // String Name = fk.name().firstName();
-	  WebElement s1venextt = driver.findElement(By.xpath("//*[@id=\"leftsidebar\"]/div/ul/li[12]/ul/li[1]/a"));
+	  WebElement s1venextt = driver.findElement(By.xpath("//a[@href='#/users-roles/manage-staff']"));
 	//	JavascriptExecutor zz = (JavascriptExecutor) driver;
 		zz.executeScript("arguments[0].scrollIntoView()", s1venextt);
 		Thread.sleep(5000);
