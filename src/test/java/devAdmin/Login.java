@@ -40,12 +40,13 @@ public class Login {
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		Thread.sleep(5000);
 	}
-		 
+
+	/*
 	@AfterMethod()
 	public void teardown() {
 		driver.quit();
 	}	 
-	
+	*/
 	
 	
 }

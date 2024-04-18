@@ -532,6 +532,11 @@ public class Student_Fresh_Enrollment_complete_flow_Others_Discount extends Logi
 		               inputField.sendKeys(Keys.CONTROL + "v");
 		               
 					   Thread.sleep(3000);
+						driver.findElement(By.xpath("//span[text()=' Preview Receipt ']")).click();
+						   Thread.sleep(3000);
+
+							driver.findElement(By.xpath("//span[text()=' Close ']")).click();
+							   Thread.sleep(3000);
 
 		               driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body/div/div/div/mat-vertical-stepper/div[2]/div/div/div/div[4]/div/button[3]/span[1]")).click();
 		               

@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="All_Flows.Batch_Change_Request">
+      <class name="All_Flows.Print_Original_Receipt">
         <methods>
-          <include name="Validating_Batch_Change_Request"/>
+          <include name="Pent_Orgnl_Rcept_With_Clicking_on_Save_and_Do_Not_Print_Button"/>
+          <include name="TEEMSLOGIN"/>
         </methods>
-      </class> <!-- All_Flows.Batch_Change_Request -->
+      </class> <!-- All_Flows.Print_Original_Receipt -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

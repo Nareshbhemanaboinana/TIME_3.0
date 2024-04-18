@@ -31,14 +31,14 @@ public class Login1 {
 
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		Thread.sleep(4000);
-		driver.findElement(By.xpath("/html/body/app-root/app-auth-layout/app-signin/div/div[2]/div[2]/div/form/mat-form-field[1]/div/div[1]/div[3]/input")).sendKeys("Sheetal");
+		driver.findElement(By.xpath("/html/body/app-root/app-auth-layout/app-signin/div/div[2]/div[2]/div/form/mat-form-field[1]/div/div[1]/div[3]/input")).sendKeys("SU");
 		Thread.sleep(4000);
 
 		driver.findElement(By.xpath("/html/body/app-root/app-auth-layout/app-signin/div/div[2]/div[2]/div/form/mat-form-field[2]/div/div[1]/div[3]/input")).sendKeys("test@1231");
 		Thread.sleep(4000);
 
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
-		Thread.sleep(5000);
+		Thread.sleep(29000);
 	}
 		 
 

@@ -136,7 +136,7 @@ String Name = fk.name().firstName();
  					UM.selectOptionByText(driver,  "Hyderabad");
 				  	Thread.sleep(2000);
 
-				      driver.findElement(By.xpath("//input[@ng-reflect-name='sMailingZipCode']")).sendKeys("500067");
+				      driver.findElement(By.xpath("//input[@formcontrolname='sMailingZipCode']")).sendKeys("500067");
 
 				      driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-collegelevel/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/mat-vertical-stepper/div[3]/div/div/div/form/div[1]/div[2]/div[1]/div/mat-checkbox/label/span[1]")).click();
 	                 Thread.sleep(2000);
@@ -513,6 +513,12 @@ zz.executeScript("window.scrollBy(0,500)");
 	               
 				   Thread.sleep(3000);
 
+					driver.findElement(By.xpath("//span[text()=' Preview Receipt ']")).click();
+					   Thread.sleep(3000);
+
+						driver.findElement(By.xpath("//span[text()=' Close ']")).click();
+						   Thread.sleep(3000);
+
 					driver.findElement(By.xpath("//span[text()=' Save and Print ']")).click();
 
 	            //   driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body/div/div/div/mat-vertical-stepper/div[2]/div/div/div/div[4]/div/button[3]/span[1]")).click();
@@ -562,7 +568,7 @@ zz.executeScript("window.scrollBy(0,500)");
 					zz.executeScript("window.scrollBy(0,100)");
 					Thread.sleep(2000);
 
-			        WebElement inputElement = driver.findElement(By.cssSelector("input[ng-reflect-name='studentId']"));
+			        WebElement inputElement = driver.findElement(By.cssSelector("input[formcontrolname='studentId']"));
 			        inputElement.sendKeys(desiredText);
 					//driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-student/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[2]/div/mat-tab-group/div/mat-tab-body[1]/div/div[2]/div/div/form/div/div/mat-form-field/div/div[1]/div[3]/input")).sendKeys(desiredText);
 					Thread.sleep(2000);
@@ -668,15 +674,15 @@ zz.executeScript("window.scrollBy(0,500)");
 
 				UM.selectOptionByText(driver, "MBA_Batch_2");
 				System.out.println("Changing Batch is:MBA_Batch_2");
-				Thread.sleep(2000);
+				Thread.sleep(3000);
 
 				driver.findElement(By.cssSelector("mat-select[formcontrolname='iTypeofPayment']")).click();
-				Thread.sleep(2000);
+				Thread.sleep(3000);
 
 				UM.selectOptionByText(driver, "2 Installments");
-				Thread.sleep(2000);
+				Thread.sleep(3000);
 				zz.executeScript("window.scrollBy(0,100)");
-				Thread.sleep(2000);
+				Thread.sleep(3000);
 
 				driver.findElement(By.xpath("//span[text()=' Approve ']")).click();
 				//Thread.sleep(2000);
