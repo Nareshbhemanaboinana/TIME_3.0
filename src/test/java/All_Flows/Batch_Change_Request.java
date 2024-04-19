@@ -679,7 +679,7 @@ zz.executeScript("window.scrollBy(0,500)");
 				driver.findElement(By.cssSelector("mat-select[formcontrolname='iTypeofPayment']")).click();
 				Thread.sleep(3000);
 
-				UM.selectOptionByText(driver, "2 Installments");
+				UM.selectOptionByText(driver, "2 installments");
 				Thread.sleep(3000);
 				zz.executeScript("window.scrollBy(0,100)");
 				Thread.sleep(3000);

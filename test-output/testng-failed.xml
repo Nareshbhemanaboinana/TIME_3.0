@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="All_Flows.Print_Original_Receipt">
+      <class name="All_Flows.Refund_Request">
         <methods>
-          <include name="Pent_Orgnl_Rcept_With_Clicking_on_Save_and_Do_Not_Print_Button"/>
-          <include name="TEEMSLOGIN"/>
+          <include name="Validating_Refund_Request"/>
         </methods>
-      </class> <!-- All_Flows.Print_Original_Receipt -->
+      </class> <!-- All_Flows.Refund_Request -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
