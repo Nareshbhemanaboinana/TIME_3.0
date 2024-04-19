@@ -600,11 +600,14 @@ Thread.sleep(2000);
 						Thread.sleep(2000);
    
 					UM.selectOptionByText(driver, "part Refund");
+					String Refundtype="part Refund";
 			        System.out.println("Refund type is part Refund");
 
 					Thread.sleep(2000);
 
 			        driver.findElement(By.xpath("//input[@formcontrolname='refundAmt']")).sendKeys("500");
+					String Refundamount="500";
+   
 			        System.out.println("Refund Amount is 500");
 					Thread.sleep(2000);
 
@@ -748,7 +751,39 @@ Thread.sleep(2000);
 			//	driver.close();
 
 					}
+					   WebElement Studentprofilee = driver.findElement(By.xpath("//a[@href='#/student-management/student']"));
+						//	JavascriptExecutor zz = (JavascriptExecutor) driver;
+								zz.executeScript("arguments[0].scrollIntoView()", Studentprofilee);
+								Thread.sleep(5000);
+								zz.executeScript("arguments[0].click()", Studentprofilee);
+								Thread.sleep(6000);
 
+								driver.findElement(By.xpath("//input[@formcontrolname='studentId']")).sendKeys(desiredText);
+								Thread.sleep(3000);
 
-}
+								zz.executeScript("window.scrollBy(0,500)");
+								Thread.sleep(3000);
+					
+								driver.findElement(By.xpath("//span[text()=' Search ']")).click();
+								Thread.sleep(3000);
+
+								driver.findElement(By.xpath("//img[@mattooltip='Profile']")).click();
+								Thread.sleep(3000);
+
+						String Actrefundamnt=driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-student-view-profile/section/div/div[2]/div/div[1]/table[3]/tr[2]/th[1]")).getText();
+
+						String Actrefundtyp=driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-student-view-profile/section/div/div[2]/div/div[1]/table[3]/tr[2]/th[2]")).getText();
+
+						if (Refundtype.equalsIgnoreCase(Actrefundtyp) && Refundamount.equalsIgnoreCase(Actrefundamnt)) {
+							
+							System.out.println("Refund request is successfully done");
+							
+						}
+						else {
+							
+					          throw new RuntimeException("Test failed because Refund request is successfully not done");
+
+						}
+	
+	}
 }
