@@ -28,7 +28,7 @@ public class Refund_Request {
 	public void Validating_Refund_Request() throws InterruptedException, FindFailed {
 
 		
-		System.setProperty("webdriver.chrome.driver", "./DD//chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "./SSD//chromedriver.exe");
 		 
 		  driver = new ChromeDriver();
     driver.get("https://dev.syngymaxim.com/TIME_Web/#/admin/schllevel");
