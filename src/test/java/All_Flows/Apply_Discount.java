@@ -30,6 +30,8 @@ public class Apply_Discount {
 
 	
 		
+		
+		
 		System.setProperty("webdriver.chrome.driver", "./SSD//chromedriver.exe");
 		 
 		  driver = new ChromeDriver();
