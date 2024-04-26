@@ -605,19 +605,6 @@ public class Student_Fresh_subpayment_complete_flow_DRCT_TNFR_BNK extends Login 
 		        WebElement textElement = driver.findElement(By.xpath("//mat-label[contains(text(), 'Validation No ')]"));
 
 
-			//	 Screen screen = new Screen();
-
-				// String workspacePath = System.getenv("WORKSPACE");
-				 //String imagePath = workspacePath + File.separator + "images" + File.separator + "validationNo.png";
-
-				 // Use the constructed image path
-			
-				//Pattern wordPattern = new Pattern(imagePath);
-					//Thread.sleep(3000); 
-
-		            // Double click on the word using SikuliX
-		          //  screen.doubleClick(wordPattern);
-
 			        actions.doubleClick(textElement).perform();
 
 					Thread.sleep(3000); 

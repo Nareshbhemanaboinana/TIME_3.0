@@ -24,10 +24,9 @@ import Components.Universal_methods;
 public class Refund_Request {
 	public  WebDriver driver;
 
-	@Test
+	@Test(groups = "Requests")
 	public void Validating_Refund_Request() throws InterruptedException, FindFailed {
-
-		
+	
 		System.setProperty("webdriver.chrome.driver", "./SSD//chromedriver.exe");
 		 
 		  driver = new ChromeDriver();
@@ -702,8 +701,13 @@ Thread.sleep(2000);
 					Thread.sleep(2000);
 					zz.executeScript("window.scrollBy(0,500)");
 					Thread.sleep(2000);
+					  WebElement refundamnt = driver.findElement(By.xpath("//input[@formcontrolname='fRefundAmt']"));
+						//JavascriptExecutor zz = (JavascriptExecutor) driver;								
+						zz.executeScript("arguments[0].scrollIntoView()", refundamnt);
 
 					driver.findElement(By.xpath("//input[@formcontrolname='fRefundAmt']")).sendKeys("500");
+					Thread.sleep(2000);
+					zz.executeScript("window.scrollBy(0,500)");
 					Thread.sleep(2000);
 
 					UM.RadioButtons(driver, "Cash");

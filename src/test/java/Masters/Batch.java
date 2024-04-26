@@ -95,12 +95,12 @@ public class Batch extends Login {
 	
 			  	
 			      driver.findElement(By.xpath("//input[@formcontrolname='sName']")).sendKeys(Batch_Name+"_Batch_"+randNo);
-			      driver.findElement(By.xpath("//input[@formcontrolname='sCode']")).sendKeys(Batch_Name);
+			      driver.findElement(By.xpath("//input[@formcontrolname='sCode']")).sendKeys(Batch_Name+randNo);
 			  	zz.executeScript("window.scrollBy(0,500)");
 
 			      	  	
 			  	System.out.println("Batch Name :"+Batch_Name+"_Batch_"+randNo);
-			  	System.out.println("Batch Code :"+Batch_Name);
+			  	System.out.println("Batch Code :"+Batch_Name+randNo);
 
 				
 		
@@ -110,7 +110,7 @@ public class Batch extends Login {
 			    LocalDate today = LocalDate.now();
 
 		        // Format for printing dates
-		        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+		        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 		        // Print today's date
 		      //  System.out.println("Today's Date: " + today.format(formatter));
