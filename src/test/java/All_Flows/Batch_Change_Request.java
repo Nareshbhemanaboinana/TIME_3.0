@@ -25,7 +25,7 @@ import Components.Universal_methods;
 public class Batch_Change_Request {
 	public  WebDriver driver;
 
-	@Test
+	@Test(groups = "Requests")
 	public void Validating_Batch_Change_Request() throws InterruptedException, FindFailed {
 
 	

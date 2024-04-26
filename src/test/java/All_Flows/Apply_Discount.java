@@ -25,7 +25,7 @@ public class Apply_Discount {
 	
 	public  WebDriver driver;
 
-	@Test
+	@Test(groups = "Requests")
 	public void Validating_Apply_Discount() throws InterruptedException, FindFailed {
 
 	
