@@ -6,10 +6,13 @@ import java.io.PrintStream;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import devAdmin.Login;
 
@@ -101,20 +104,24 @@ public class Universal_methods    {
 	    
 	
 	public String selectOptionByText(WebDriver rdriver, String optionText) throws InterruptedException {
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		 driver=rdriver;
 			PageFactory.initElements(rdriver, this);
-	
-		
+	        WebDriverWait wait = new WebDriverWait(driver, 10);
+/*
+	        List<WebElement> options = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("mat-option")));
+
 		// Find all the options in the dropdown
-        List<WebElement> options = driver.findElements(By.cssSelector("mat-option"));
+      //  List<WebElement> options = driver.findElements(By.cssSelector("mat-option"));
         
         // Loop through the options to find the desired one
         for (WebElement option : options) {
             if (option.getText().equals(optionText)) {
                 // Click on the desired option
+                wait.until(ExpectedConditions.elementToBeClickable(option));
+
                 option.click();
-                Thread.sleep(1000);
+              //  Thread.sleep(1000);
                 break; // Exit the loop once the desired option is found and clicked
             }
         
@@ -123,7 +130,32 @@ public class Universal_methods    {
  	   }
 		return optionText;
     }
+  */
+	        try {
+	            List<WebElement> options = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("mat-option")));
 
+	            // Loop through the options to find the desired one
+	            for (WebElement option : options) {
+	                try {
+	                    if (option.getText().equals(optionText)) {
+	                        // Click on the desired option
+	                        wait.until(ExpectedConditions.elementToBeClickable(option));
+	                        option.click();
+	                        return optionText; // Return the selected option text
+	                    }
+	                } catch (StaleElementReferenceException e) {
+	                    // Handle the stale element reference exception by re-finding the options
+	                    options = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("mat-option")));
+	                    continue; // Continue to the next iteration of the loop
+	                }
+	            }
 
-
+	            // If the desired option is not found, return null (or an empty string)
+	            return null;
+	        } catch (StaleElementReferenceException e) {
+	            // Handle the stale element reference exception at the higher level if needed
+	            e.printStackTrace();
+	            return null; // Or handle it differently based on your requirements
+	        }
+	}
 }

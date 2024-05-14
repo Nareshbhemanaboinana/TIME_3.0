@@ -16,6 +16,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.FindFailed;
 import org.testng.annotations.Test;
 
@@ -42,6 +43,7 @@ public class Convert_Full_Payment__with_Discount_dd_cheque_Payment extends Login
 	    String neftReferenceNumber = fk.regexify("[A-Z0-9]{10}"); // Example: Generate a 10-character alphanumeric string
 	    String rtgsReferenceNumber = fk.regexify("[A-Z0-9]{10}"); // Example: Generate a 10-character alphanumeric string
 	    String referenceNumber = fk.regexify("[A-Z0-9]{12}"); // Example: Generate a 12-character alphanumeric string
+        WebDriverWait wait = new WebDriverWait(driver, 10);
 
 	String Name = fk.name().firstName();
 	  WebElement svenextt = driver.findElement(By.xpath("//a[@href='#/admin/collegelevel']"));

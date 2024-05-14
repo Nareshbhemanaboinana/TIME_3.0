@@ -7,7 +7,10 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -30,24 +33,26 @@ public class Login {
         driver.navigate().refresh();
 
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		Thread.sleep(4000);
-		driver.findElement(By.xpath("/html/body/app-root/app-auth-layout/app-signin/div/div[2]/div[2]/div/form/mat-form-field[1]/div/div[1]/div[3]/input")).sendKeys("Jodpur");
-		Thread.sleep(4000);
+        WebDriverWait wait = new WebDriverWait(driver, 20);
 
-		driver.findElement(By.xpath("/html/body/app-root/app-auth-layout/app-signin/div/div[2]/div[2]/div/form/mat-form-field[2]/div/div[1]/div[3]/input")).sendKeys("Jodpur@123");
-		Thread.sleep(4000);
+	WebElement  Login= 	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@formcontrolname='username']")));
+	Login.sendKeys("Jodpur");
+		WebElement  pswd= 	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@formcontrolname='password']")));
 
-		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		pswd.sendKeys("Jodpur@123");
+		WebElement  Submit= wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit']")));
+		Submit.click();
 		Thread.sleep(5000);
 	}
 
+	/*
 	
 	@AfterMethod()
 	public void teardown() {
 		driver.quit();
 	}	 
 	
-	
+	*/
 	
 }
 	
