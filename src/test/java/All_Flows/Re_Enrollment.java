@@ -11,6 +11,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.FindFailed;
 import org.testng.annotations.Test;
 
@@ -40,8 +43,10 @@ String Name = fk.name().firstName();
 		  WebElement svenextt = driver.findElement(By.xpath("//a[@href='#/admin/collegelevel']"));
 			JavascriptExecutor zz = (JavascriptExecutor) driver;
 			zz.executeScript("arguments[0].scrollIntoView()", svenextt);
-			Thread.sleep(5000);
+			Thread.sleep(6000);
 			zz.executeScript("arguments[0].click()", svenextt);
+	        WebDriverWait wait = new WebDriverWait(driver, 10);
+
 			Thread.sleep(6000);
 			
 
@@ -61,9 +66,10 @@ String Name = fk.name().firstName();
 			UM.selectOptionByText(driver,  "2024");
 
 	     
-
-			Thread.sleep(3000);
-		      driver.findElement(By.xpath("//input[@formcontrolname='sName']")).sendKeys(Name);
+	        WebElement stdntName = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@formcontrolname='sName']")));
+	        stdntName.sendKeys(Name);
+			//Thread.sleep(3000);
+		      //driver.findElement(By.xpath("//input[@formcontrolname='sName']")).sendKeys(Name);
 		      driver.findElement(By.xpath("//input[@formcontrolname='sMobileNo']")).sendKeys("9999999999");
 		      driver.findElement(By.xpath("//input[@formcontrolname='sTelephoneNo']")).sendKeys("99999999999");
 		      driver.findElement(By.xpath("//input[@formcontrolname='sEmail']")).sendKeys(Name+"@yopmail.com");
@@ -74,7 +80,7 @@ String Name = fk.name().firstName();
 		    	Thread.sleep(3000);
 				zz.executeScript("window.scrollBy(0,500)");
 				Thread.sleep(3000);
-
+		      
 		      thirdDropdown.click();
 				UM.selectOptionByText(driver,  "OBC");
 
@@ -98,23 +104,26 @@ String Name = fk.name().firstName();
 			      driver.findElement(By.xpath("//input[@formcontrolname='sFatherOrganization']")).sendKeys("abc");
 			      driver.findElement(By.xpath("//input[@formcontrolname='sFatherDesignation']")).sendKeys("abc");
 			      driver.findElement(By.xpath("//input[@formcontrolname='sGSTno']")).sendKeys("29ABCDE1234F1ZH");
-					Thread.sleep(3000);
+					//Thread.sleep(3000);
 
-
-					driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-collegelevel/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/mat-vertical-stepper/div[2]/div/div/div/form/div[2]/button[2]/span[1]")).click();
+			        WebElement Nextbtn0 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/app-root/app-main-layout/app-collegelevel/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/mat-vertical-stepper/div[2]/div/div/div/form/div[2]/button[2]/span[1]")));
+			        Nextbtn0.click();
 			      driver.findElement(By.xpath("//textarea[@formcontrolname='sMailingAddress1']")).sendKeys("hyd");
 			      driver.findElement(By.xpath("//textarea[@formcontrolname='sMailingAddress2']")).sendKeys("hyd");
 			      driver.findElement(By.cssSelector("mat-select[formcontrolname='iMailingState']")).click();			
 					UM.selectOptionByText(driver,  "Telengana");
 
-					Thread.sleep(3000);
+			//		Thread.sleep(3000);
+			        WebElement imail = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("mat-select[formcontrolname='iMailingCity']")));
 
-				      driver.findElement(By.cssSelector("mat-select[formcontrolname='iMailingCity']")).click();			
+			        imail.click();
+				    //  driver.findElement(By.cssSelector("mat-select[formcontrolname='iMailingCity']")).click();			
                      Thread.sleep(3000);
  					UM.selectOptionByText(driver,  "Hyderabad");
-				  	Thread.sleep(3000);
-
-				      driver.findElement(By.xpath("//input[@ng-reflect-name='sMailingZipCode']")).sendKeys("500067");
+				  	//Thread.sleep(3000);
+			        WebElement zipcode = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@ng-reflect-name='sMailingZipCode']")));
+			        zipcode.sendKeys("500067");
+				  //    driver.findElement(By.xpath("//input[@ng-reflect-name='sMailingZipCode']")).sendKeys("500067");
 
 				      driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-collegelevel/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/mat-vertical-stepper/div[3]/div/div/div/form/div[1]/div[2]/div[1]/div/mat-checkbox/label/span[1]")).click();
 	                 Thread.sleep(4000);
@@ -277,14 +286,15 @@ zz.executeScript("window.scrollBy(0,500)");
 		      driver.findElement(By.cssSelector("mat-select[formcontrolname='batchCode']")).click();			
 
 			Thread.sleep(3000);
-			UM.selectOptionByText(driver, "MBA_Batch");
-			System.out.println("Enrolled Batch is: MBA_Batch");
-			Thread.sleep(3000);
+			UM.selectOptionByText(driver, "MBA_Batch009");
+			System.out.println("Enrolled Batch is: MBA_Batch009");
+			//Thread.sleep(3000);
 
 			  WebElement typeOfPayment = driver.findElement(By.cssSelector("mat-select[formcontrolname='typeOfPayment']"));
-		        
+			//  WebDriverWait wait = new WebDriverWait(driver, 10);
+		        wait.until(ExpectedConditions.elementToBeClickable(typeOfPayment)).click(); 
 		        // Click on the dropdown
-			   typeOfPayment.click();
+			 //  typeOfPayment.click();
 				UM.selectOptionByText(driver,  "2 Installments");
 				Thread.sleep(3000);
 
@@ -622,7 +632,8 @@ zz.executeScript("window.scrollBy(0,500)");
 					UM.selectOptionByText(driver,  "Parents");
 					Thread.sleep(3000);
 
-					driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body/div/div/div/mat-vertical-stepper/div[2]/div/div/div/form[3]/div[1]/div[3]/mat-checkbox/label/span[1]")).click();
+				//	driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body/div/div/div/mat-vertical-stepper/div[2]/div/div/div/form[3]/div[1]/div[3]/mat-checkbox/label/span[1]")).click();
+					driver.findElement(By.xpath("//h5[text()=' Student Signed On Rules & Regulations ']")).click();
 					Thread.sleep(3000);
 
 				     // Simulate pressing the Tab key

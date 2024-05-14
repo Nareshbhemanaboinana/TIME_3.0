@@ -16,6 +16,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.FindFailed;
 import org.testng.annotations.Test;
 
@@ -34,6 +36,7 @@ public class Enrolling_Student_convert_Full_Pymnt_with_Cash extends Login{
 		
 		Faker fk = new Faker();
 		Universal_methods UM=new Universal_methods ();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
 
 	  Actions actions = new Actions(driver);
 	   String chequeNumber = fk.number().digits(8); // Example: Generate an 8-digit number
@@ -237,7 +240,8 @@ public class Enrolling_Student_convert_Full_Pymnt_with_Cash extends Login{
 
 	 
 	      driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-collegelevel/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/mat-vertical-stepper/div[5]/div/div/div/div/button[2]/span[1]")).click();
-	      Thread.sleep(4000);
+	     // Thread.sleep(4000);
+	        wait.until(ExpectedConditions.alertIsPresent());
 
 	      Alert alert = driver.switchTo().alert();
 
@@ -284,8 +288,8 @@ public class Enrolling_Student_convert_Full_Pymnt_with_Cash extends Login{
 			      driver.findElement(By.cssSelector("mat-select[formcontrolname='batchCode']")).click();			
 
 				Thread.sleep(3000);
-				UM.selectOptionByText(driver, "MBA_Batch");
-				System.out.println("Enrolled Batch is: MBA_Batch");
+				UM.selectOptionByText(driver, "MBA_Batch009");
+				System.out.println("Enrolled Batch is: MBA_Batch009");
 				Thread.sleep(4000);
 		        actions.sendKeys(Keys.TAB).perform();
 							Thread.sleep(3000);

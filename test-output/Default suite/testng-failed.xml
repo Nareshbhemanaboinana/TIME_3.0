@@ -7,7 +7,6 @@
         <methods>
           <include name="Campus_Alliance_Complete_Flow_Enquiry_Enrollment_subsequent_Pymnt"/>
           <include name="TEEMSLOGIN"/>
-          <include name="teardown"/>
         </methods>
       </class> <!-- All_Flows.Campus_Alliance_Complete_Flow -->
     </classes>

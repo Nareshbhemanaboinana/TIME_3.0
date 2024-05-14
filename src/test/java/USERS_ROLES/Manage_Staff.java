@@ -34,7 +34,7 @@ public class Manage_Staff extends Login1{
 	     int second = fk.random().nextInt(9);
 	    //String fakePhoneNumber = fk.phoneNumber().phoneNumber();
 		//String adress=fk.address().fullAddress();
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 	
 	 	
 	 	WebElement svenexxt = driver.findElement(By.xpath("//a[@href='#/setups/franchisee']"));

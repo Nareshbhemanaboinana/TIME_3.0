@@ -17,6 +17,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.sikuli.script.FindFailed;
+import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
 
@@ -24,7 +25,7 @@ import Components.Universal_methods;
 import devAdmin.Login;
 
 public class Student_Fresh_Enrollment_Complete_Flow_dd_cheque_Discount extends Login{
-	
+	@Test
 	public void Student_payment_complete_flow_dd_cheque_Discount() throws InterruptedException, FindFailed, HeadlessException, UnsupportedFlavorException, IOException {
 
 

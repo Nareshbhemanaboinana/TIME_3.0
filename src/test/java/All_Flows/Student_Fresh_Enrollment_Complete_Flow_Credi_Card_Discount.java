@@ -17,12 +17,13 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.sikuli.script.FindFailed;
+import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
 
 import Components.Universal_methods;
 import devAdmin.Login;
-
+@Test
 public class Student_Fresh_Enrollment_Complete_Flow_Credi_Card_Discount extends Login {
 	
 	public void Student_payment_complete_flow_Credi_Card_Discount() throws InterruptedException, FindFailed, HeadlessException, UnsupportedFlavorException, IOException {

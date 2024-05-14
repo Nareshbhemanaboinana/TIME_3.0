@@ -36,11 +36,11 @@ public class Refund_Request {
 
 	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	Thread.sleep(4000);
-	driver.findElement(By.xpath("/html/body/app-root/app-auth-layout/app-signin/div/div[2]/div[2]/div/form/mat-form-field[1]/div/div[1]/div[3]/input")).sendKeys("EM_Counsellor-I");
+	driver.findElement(By.xpath("//input[@formcontrolname='username']")).sendKeys("EM_Counsellor-I");
 	Thread.sleep(4000);
 
-	driver.findElement(By.xpath("/html/body/app-root/app-auth-layout/app-signin/div/div[2]/div[2]/div/form/mat-form-field[2]/div/div[1]/div[3]/input")).sendKeys("Mumbai@123");
-	Thread.sleep(4000);
+	driver.findElement(By.xpath("//input[@formcontrolname='password']")).sendKeys("Mumbai@123");
+		Thread.sleep(4000);
 
 	driver.findElement(By.xpath("//button[@type='submit']")).click();
 	Thread.sleep(5000);
@@ -641,11 +641,11 @@ Thread.sleep(2000);
 									Thread.sleep(5000);
 									zz.executeScript("arguments[0].click()", LogoutButton);
 									Thread.sleep(4000);
-   
-									driver.findElement(By.xpath("/html/body/app-root/app-auth-layout/app-signin/div/div[2]/div[2]/div/form/mat-form-field[1]/div/div[1]/div[3]/input")).sendKeys("EM_Admin");
+									driver.findElement(By.xpath("//input[@formcontrolname='username']")).sendKeys("EM_Admin");
 									Thread.sleep(4000);
 
-									driver.findElement(By.xpath("/html/body/app-root/app-auth-layout/app-signin/div/div[2]/div[2]/div/form/mat-form-field[2]/div/div[1]/div[3]/input")).sendKeys("Mumbai@123");
+									driver.findElement(By.xpath("//input[@formcontrolname='password']")).sendKeys("Mumbai@123");
+									
 									Thread.sleep(4000);
 
 									driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -704,8 +704,28 @@ Thread.sleep(2000);
 					  WebElement refundamnt = driver.findElement(By.xpath("//input[@formcontrolname='fRefundAmt']"));
 						//JavascriptExecutor zz = (JavascriptExecutor) driver;								
 						zz.executeScript("arguments[0].scrollIntoView()", refundamnt);
+						Thread.sleep(2000);
 
-					driver.findElement(By.xpath("//input[@formcontrolname='fRefundAmt']")).sendKeys("500");
+				        WebElement table = driver.findElement(By.cssSelector("table.m-t-20"));
+
+				        // Find the last row of the table
+				        WebElement lastRow = table.findElement(By.cssSelector("tbody tr:last-child"));
+
+				        // Extract data from the first cell of the last row
+				        WebElement firstCell = lastRow.findElement(By.tagName("td"));
+				        String data = firstCell.getText();
+
+			String SSID	=	driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-student-studentrequest-view/section/div/div[3]/div/div/table/tbody/tr[15]/td[1]")).getText();	
+			if(SSID.equals(StudentID)) {
+				Thread.sleep(2000);
+
+				driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-student-studentrequest-view/section/div/div[3]/div/div/table/tbody/tr[15]/td[1]")).click();
+			}
+			else {
+				System.out.println("Student details not displaying ");
+			}
+			      
+			driver.findElement(By.xpath("//input[@formcontrolname='fRefundAmt']")).sendKeys("500");
 					Thread.sleep(2000);
 					zz.executeScript("window.scrollBy(0,500)");
 					Thread.sleep(2000);

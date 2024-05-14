@@ -38,10 +38,10 @@ public class Batch_Change_Request {
 
 	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	Thread.sleep(4000);
-	driver.findElement(By.xpath("/html/body/app-root/app-auth-layout/app-signin/div/div[2]/div[2]/div/form/mat-form-field[1]/div/div[1]/div[3]/input")).sendKeys("EM_Counsellor-I");
+	driver.findElement(By.xpath("//input[@formcontrolname='username']")).sendKeys("EM_Counsellor-I");
 	Thread.sleep(4000);
 
-	driver.findElement(By.xpath("/html/body/app-root/app-auth-layout/app-signin/div/div[2]/div[2]/div/form/mat-form-field[2]/div/div[1]/div[3]/input")).sendKeys("Mumbai@123");
+	driver.findElement(By.xpath("//input[@formcontrolname='password']")).sendKeys("Mumbai@123");
 	Thread.sleep(4000);
 
 	driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -609,11 +609,11 @@ zz.executeScript("window.scrollBy(0,500)");
 									Thread.sleep(5000);
 									zz.executeScript("arguments[0].click()", LogoutButton);
 									Thread.sleep(4000);
-
-									driver.findElement(By.xpath("/html/body/app-root/app-auth-layout/app-signin/div/div[2]/div[2]/div/form/mat-form-field[1]/div/div[1]/div[3]/input")).sendKeys("EM_Admin");
+									driver.findElement(By.xpath("//input[@formcontrolname='username']")).sendKeys("EM_Admin");
 									Thread.sleep(4000);
 
-									driver.findElement(By.xpath("/html/body/app-root/app-auth-layout/app-signin/div/div[2]/div[2]/div/form/mat-form-field[2]/div/div[1]/div[3]/input")).sendKeys("Mumbai@123");
+									driver.findElement(By.xpath("//input[@formcontrolname='password']")).sendKeys("Mumbai@123");
+									
 									Thread.sleep(4000);
 
 									driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -713,5 +713,30 @@ zz.executeScript("window.scrollBy(0,500)");
 		//	driver.close();
 
 				}		
+
+		        WebElement inputElementid = driver.findElement(By.cssSelector("input[formcontrolname='studentId']"));
+		        inputElementid.sendKeys(desiredText);
+				//driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-student/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[2]/div/mat-tab-group/div/mat-tab-body[1]/div/div[2]/div/div/form/div/div/mat-form-field/div/div[1]/div[3]/input")).sendKeys(desiredText);
+				Thread.sleep(2000);
+				zz.executeScript("window.scrollBy(0,500)");
+				Thread.sleep(2000);
+				
+				driver.findElement(By.xpath("//span[text()=' Search ']")).click();
+				Thread.sleep(3000);
+
+				driver.findElement(By.xpath("//img[@mattooltip='Profile']")).click();
+				Thread.sleep(3000);
+			
+
+			String changedBatch=	driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-student-view-profile/section/div/div[2]/div/div[1]/table[2]/tr[2]/th[1]")).getText();
+	
+			if(changedBatch.equals("MBA_Batch_2")) {
+				System.out.println("Applying discount done successfully");
+			}
+			else {
+				System.out.println("Applying discount amount displaying different");
+
+			}
+			
 	}
 }

@@ -49,6 +49,7 @@ public class Student_Fresh_subpayment_complete_flow_Cash extends Login  {
 	    String neftReferenceNumber = fk.regexify("[A-Z0-9]{10}"); // Example: Generate a 10-character alphanumeric string
 	    String rtgsReferenceNumber = fk.regexify("[A-Z0-9]{10}"); // Example: Generate a 10-character alphanumeric string
 	    String referenceNumber = fk.regexify("[A-Z0-9]{12}"); // Example: Generate a 12-character alphanumeric string
+	    WebDriverWait wait = new WebDriverWait(driver, 10);
 
 	String Name = fk.name().firstName();
 	  WebElement svenextt = driver.findElement(By.xpath("//a[@href='#/admin/collegelevel']"));
@@ -245,7 +246,8 @@ public class Student_Fresh_subpayment_complete_flow_Cash extends Login  {
 
 	 
 	      driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-collegelevel/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/mat-vertical-stepper/div[5]/div/div/div/div/button[2]/span[1]")).click();
-	      Thread.sleep(4000);
+	    //  Thread.sleep(4000);
+	      wait.until(ExpectedConditions.alertIsPresent());
 
 	      Alert alert = driver.switchTo().alert();
 
@@ -292,8 +294,8 @@ public class Student_Fresh_subpayment_complete_flow_Cash extends Login  {
 			      driver.findElement(By.cssSelector("mat-select[formcontrolname='batchCode']")).click();			
 
 				Thread.sleep(3000);
-				UM.selectOptionByText(driver, "MBA_Batch");
-				System.out.println("Enrolled Batch is: MBA_Batch");
+				UM.selectOptionByText(driver, "MBA_Batch009");
+				System.out.println("Enrolled Batch is: MBA_Batch009");
 				Thread.sleep(4000);
 
 				  WebElement typeOfPayment = driver.findElement(By.xpath("/html/body/app-root/app-main-layout/app-individualf/section/div/div[2]/div/div/div/mat-tab-group/div/mat-tab-body/div/div/div/mat-vertical-stepper/div[2]/div/div/div/form[1]/div/div[6]/div[1]/mat-form-field/div/div[1]/div[3]/mat-select/div/div[2]"));
@@ -635,7 +637,7 @@ public class Student_Fresh_subpayment_complete_flow_Cash extends Login  {
 				zz.executeScript("window.scrollBy(0,200)");
 				Thread.sleep(3000); 
 
-	 			driver.findElement(By.xpath("//span[text()=' Preview ']")).click();
+	 			driver.findElement(By.xpath("//span[text()=' Preview Receipt ']")).click();
 				Thread.sleep(3000); 
 				zz.executeScript("window.scrollBy(0,600)");
 				Thread.sleep(3000); 
