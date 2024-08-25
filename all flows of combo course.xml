@@ -1,0 +1,86 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Naresh" >
+<listeners>
+        <listener class-name="Components.Listeners"/>
+</listeners>
+    <test name="ParameterizedTestMethodNEFT">
+        <classes>
+            <class name="All_Flows.Enroll_Student_Combo_Course_with_cash_Payment">
+                <methods>
+                    <include name="Enroll_Student_complete_flow_with_Combo_Course_with_cash_Payment">
+                        <parameter name="optionText2" value="NEFT"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ParameterizedTestMethodRTGS">
+        <classes>
+            <class name="All_Flows.Enroll_Student_Combo_Course_with_cash_Payment">
+                <methods>
+                    <include name="Enroll_Student_complete_flow_with_Combo_Course_with_cash_Payment">
+                        <parameter name="optionText2" value="RTGS"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ParameterizedTestMethodTDS">
+        <classes>
+            <class name="All_Flows.Enroll_Student_Combo_Course_with_cash_Payment">
+                <methods>
+                    <include name="Enroll_Student_complete_flow_with_Combo_Course_with_cash_Payment">
+                        <parameter name="optionText2" value="TDS"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+  <test name="ParameterizedTestMethodDirect Transfer to Bank">
+        <classes>
+            <class name="All_Flows.Enroll_Student_Combo_Course_with_cash_Payment">
+                <methods>
+                    <include name="Enroll_Student_complete_flow_with_Combo_Course_with_cash_Payment">
+                        <parameter name="optionText2" value="Direct Transfer to Bank"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<test name="ParameterizedTestMethodCredit Card">
+        <classes>
+            <class name="All_Flows.Enroll_Student_Combo_Course_with_cash_Payment">
+                <methods>
+                    <include name="Enroll_Student_complete_flow_with_Combo_Course_with_cash_Payment">
+                        <parameter name="optionText2" value="Credit Card"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<test name="ParameterizedTestMethodCash">
+        <classes>
+            <class name="All_Flows.Enroll_Student_Combo_Course_with_cash_Payment">
+                <methods>
+                    <include name="Enroll_Student_complete_flow_with_Combo_Course_with_cash_Payment">
+                        <parameter name="optionText2" value="Cash"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<test name="ParameterizedTestMethodOthers">
+        <classes>
+            <class name="All_Flows.Enroll_Student_Combo_Course_with_cash_Payment">
+                <methods>
+                    <include name="Enroll_Student_complete_flow_with_Combo_Course_with_cash_Payment">
+                        <parameter name="optionText2" value="Others"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
+
+

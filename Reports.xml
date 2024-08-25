@@ -1,0 +1,46 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Naresh">
+<listeners>
+        <listener class-name="Components.Listeners"/>
+</listeners>
+<test name="Reports">
+
+ <classes>
+  <class name="Reports.Receipt_Wise_Collection_Report">
+                <methods>
+                    <include name="Receipt_Wise_Collection_Reports"/>
+                </methods>
+        </class>     
+
+   <class name="Reports.Revenue_Collection_Report">
+                <methods>
+                    <include name="Revenue_Collection_Reports"/>
+                </methods>
+        </class>     
+  <class name="Reports.Subcourse_wise_Enrollment">
+                <methods>
+                    <include name="Subcourse_wise_Enrollment_Reports"/>
+                </methods>
+        </class> 
+  <class name="Reports.SubCourse_Wise_Revenue_Report">
+                <methods>
+                    <include name="SubCourse_Wise_Revenue_Reports"/>
+                </methods>
+        </class> 
+  <class name="Reports.Discount">
+                <methods>
+                    <include name="Discounts"/>
+                </methods>
+        </class> 
+ </classes>
+
+			
+
+		
+ </test>
+
+</suite>
+          
+
+
+

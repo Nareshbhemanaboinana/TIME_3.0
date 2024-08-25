@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Naresh" >
+<listeners>
+        <listener class-name="Browse.Listeners"/>
+</listeners>
+<test name="Updating_Resume">
+
+ <classes>
+     
+ 
+
+
+  <class name="All_Flows.Update_Resume">
+                <methods>
+                   <include name="updating_Noukary_Resume"/>
+                </methods>
+        </class>     
+			
+ </classes>
+
+		
+
+          
+
+
+</test>
+</suite>
+
+

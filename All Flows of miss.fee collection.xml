@@ -1,0 +1,121 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Naresh" >
+<listeners>
+        <listener class-name="Components.Listeners"/>
+</listeners>
+    <test name="ParameterizedTestMethodCash">
+        <classes>
+            <class name="All_Flows.Miscellaneous_Fee_Collection_with_out_Student_id">
+                <methods>
+                    <include name="Miscellaneous_Fee_Collection_with_out_Student_ID">
+                        <parameter name="optionText2" value="Cash"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ParameterizedTestMethodDD/Cheque">
+        <classes>
+            <class name="All_Flows.Miscellaneous_Fee_Collection_with_out_Student_id">
+                <methods>
+                    <include name="Miscellaneous_Fee_Collection_with_out_Student_ID">
+                        <parameter name="optionText2" value="DD/Cheque"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ParameterizedTestMethodCredit Card">
+        <classes>
+            <class name="All_Flows.Miscellaneous_Fee_Collection_with_out_Student_id">
+                <methods>
+                    <include name="Miscellaneous_Fee_Collection_with_out_Student_ID">
+                        <parameter name="optionText2" value="Credit Card"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+  <test name="ParameterizedTestMethodTDS">
+        <classes>
+            <class name="All_Flows.Miscellaneous_Fee_Collection_with_out_Student_id">
+                <methods>
+                    <include name="Miscellaneous_Fee_Collection_with_out_Student_ID">
+                        <parameter name="optionText2" value="TDS"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<test name="ParameterizedTestMethodOthers">
+        <classes>
+            <class name="All_Flows.Miscellaneous_Fee_Collection_with_out_Student_id">
+                <methods>
+                    <include name="Miscellaneous_Fee_Collection_with_out_Student_id">
+                        <parameter name="optionText2" value="Others"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<test name="ParameterizedTestMethodCashwithstudentID">
+        <classes>
+            <class name="All_Flows.Miscellaneous_Fee_Collection_with_Student_id">
+                <methods>
+                    <include name="Miscellaneous_Fee_Collection_with_Student_ID">
+                        <parameter name="optionText2" value="Cash"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<test name="ParameterizedTestMethodDD/ChequewithstudentID">
+        <classes>
+            <class name="All_Flows.Miscellaneous_Fee_Collection_with_Student_id">
+                <methods>
+                    <include name="Miscellaneous_Fee_Collection_with_Student_ID">
+                        <parameter name="optionText2" value="DD/Cheque"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+<test name="ParameterizedTestMethodCredit CardwithstudentID">
+        <classes>
+            <class name="All_Flows.Miscellaneous_Fee_Collection_with_Student_id">
+                <methods>
+                    <include name="Miscellaneous_Fee_Collection_with_Student_ID">
+                        <parameter name="optionText2" value="Credit Card"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<test name="ParameterizedTestMethodTDSwithstudentID">
+        <classes>
+            <class name="All_Flows.Miscellaneous_Fee_Collection_with_Student_id">
+                <methods>
+                    <include name="Miscellaneous_Fee_Collection_with_Student_ID">
+                        <parameter name="optionText2" value="TDS"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<test name="ParameterizedTestMethodOtherswithstudentID">
+        <classes>
+            <class name="All_Flows.Miscellaneous_Fee_Collection_with_Student_id">
+                <methods>
+                    <include name="Miscellaneous_Fee_Collection_with_Student_ID">
+                        <parameter name="optionText2" value="Others"/>
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>
+
+
